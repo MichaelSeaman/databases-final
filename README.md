@@ -5,9 +5,7 @@
 **Due date:** 12/16/16
 
 ---
-## Proposal: Amazon Sales Database
----
-
+### Proposal: Amazon Sales Database
 #### Premise
 The multi-billion dollar e-sales giant Amazon in 2015 alone had over 100 billion
 dollars in online sales revenue, 304 million registered users, with another 1.9
@@ -36,11 +34,10 @@ application will be able to export reports of the national most/least popular
 items, the most/least popular items by state, and the customers that generate the
 most revenue.
 
+---
 ### Schema:
 
 Customers ->  `railCoCustomers( customer_id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, first_name VARCHAR(25), last_name VARCHAR(25) )`
-
-
 
 ---
 ## Usage
@@ -54,7 +51,7 @@ To create data:
 
 ```
 
-
+---
 ###Overview:
 The	UI	can	be	developed	in	the	framework	of	your	choosing	(i.e.	web,	.net,
 java),	however	the	backend	database	must	obviously	be	MySQL.
@@ -75,7 +72,7 @@ The	final	project	must incorporate at a	minimum	the	following	requirements:
 8.  Enforce	referential	integrality (Constraints)
 9.  Include	Database	Views,	Indexes
 
-
+---
 ## Honor Pledge
 
 I pledge that all the work in this repository is my own!
