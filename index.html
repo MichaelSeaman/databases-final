@@ -19,96 +19,458 @@
       <div class="col-xs-12">
         <div class="col-sm-4 col-xs-12 bg-default">
 
-
-
-
-
-          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
-            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="displayDropdownMenu" data-toggle="dropdown">
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#displayCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
               Display
               <span class="caret pull-right"></span>
             </button>
-            <div class="dropdown-menu" aria-labelled-by="displayDropdownMenu">
+          </div>
+          <div class="collapse" id="displayCollapse">
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Warehouses</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Shipping</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Stock</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Customers</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Customer Addresses</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Transaction History</button>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
-            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="searchDropdownMenu" data-toggle="dropdown">
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#searchCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
               Search
               <span class="caret pull-right"></span>
             </button>
-            <div class="dropdown-menu" aria-labelled-by="searchDropdownMenu">
-              <button class="btn btn-link" type="button">Items</button>
-              <button class="btn btn-link" type="button">Warehouses</button>
-              <button class="btn btn-link" type="button">Shipping</button>
-              <button class="btn btn-link" type="button">Stock</button>
-              <button class="btn btn-link" type="button">Customers</button>
-              <button class="btn btn-link" type="button">Customer Addresses</button>
-              <button class="btn btn-link" type="button">Transaction History</button>
+          </div>
+          <div class="collapse" id="searchCollapse">
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchItemsDropdown" data-toggle="dropdown">
+                Items
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchItemsDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Price</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchWarehousesDropdown" data-toggle="dropdown">
+                Warehouses
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchWarehousesDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">City</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchShippingDropdown" data-toggle="dropdown">
+                Shipping
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchShippingDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Shipping ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchStockDropdown" data-toggle="dropdown">
+                Stock
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchStockDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Stock ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Item ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Quantity</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchCustomersDropdown" data-toggle="dropdown">
+                Customers
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchCustomersDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">First Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Last Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Email</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Username</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Password</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchCustomerAddressesDropdown" data-toggle="dropdown">
+                Customer Addresses
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchCustomerAddressesDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Customer ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">City</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchTransactionsDropdown" data-toggle="dropdown">
+                Transaction History
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchTransactionsDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Transaction ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Customer ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Item ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Quantity</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
-            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="createDropdownMenu" data-toggle="dropdown">
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#createCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
               Create
               <span class="caret pull-right"></span>
             </button>
-            <div class="dropdown-menu" aria-labelled-by="createDropdownMenu">
+          </div>
+          <div class="collapse" id="createCollapse">
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Item</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Warehouse</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Shipping</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Stock</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Customer</button>
-              <button class="btn btn-link" type="button">Customer Address</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button">Customer Addresse</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Transaction</button>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
-            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="updateDropdownMenu" data-toggle="dropdown">
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#updateCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
               Update
               <span class="caret pull-right"></span>
             </button>
-            <div class="dropdown-menu" aria-labelled-by="updateDropdownMenu">
-              <button class="btn btn-link" type="button">Item</button>
-              <button class="btn btn-link" type="button">Warehouse</button>
-              <button class="btn btn-link" type="button">Shipping</button>
-              <button class="btn btn-link" type="button">Stock</button>
-              <button class="btn btn-link" type="button">Customer</button>
-              <button class="btn btn-link" type="button">Customer Address</button>
-              <button class="btn btn-link" type="button">Transaction</button>
+          </div>
+          <div class="collapse" id="updateCollapse">
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateItemDropdown" data-toggle="dropdown">
+                Item
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateItemDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Price</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Description</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateWarehouseDropdown" data-toggle="dropdown">
+                Warehouse
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateWarehouseDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">City</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateShippingDropdown" data-toggle="dropdown">
+                Shipping
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateShippingDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateStockDropdown" data-toggle="dropdown">
+                Stock
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateStockDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Item ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Quantity</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateCustomerDropdown" data-toggle="dropdown">
+                Customer
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateCustomerDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">First Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Last Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Email</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Username</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Password</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateCustomerAddresseDropdown" data-toggle="dropdown">
+                Customer Addresse
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateCustomerAddresseDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Customer ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">City</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateTransactionDropdown" data-toggle="dropdown">
+                Transaction
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateTransactionDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Customer ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Item ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Address ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button">Quantity</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
-            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="deleteDropdownMenu" data-toggle="dropdown">
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#deleteCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
               Delete
               <span class="caret pull-right"></span>
             </button>
-            <div class="dropdown-menu" aria-labelled-by="deleteDropdownMenu">
+          </div>
+          <div class="collapse" id="deleteCollapse">
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Item</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Warehouse</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Shipping</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Stock</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Customer</button>
-              <button class="btn btn-link" type="button">Customer Address</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button">Customer Addresse</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Transaction</button>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
-            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="reportsDropdownMenu" data-toggle="dropdown">
-              Reports
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#reportCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Generate Reports
               <span class="caret pull-right"></span>
             </button>
-            <div class="dropdown-menu" aria-labelled-by="reportsDropdownMenu">
+          </div>
+          <div class="collapse" id="reportCollapse">
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Best Selling Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Worst Selling Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Best Selling Items (State)</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Worst Selling Items (State)</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button">Biggest Spenders</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
               <button class="btn btn-link" type="button" id="testButton">Test</button>
             </div>
           </div>
