@@ -1,17 +1,12 @@
-const resetTables = require('./js/resetTables.js');
+const sqlMethods = require('./js/sqlMethods.js');
+const fs = require('fs');
 
 console.log("pageScript Loaded.");
 
 $(function () {
   $("#testButton").bind("click", function () {
     console.log("test Clicked");
-    resetTables.executeUpdate(resetTables.dropAllTables);
-    resetTables.executeUpdate(resetTables.createAllTables);
-    resetTables.executeUpdate(resetTables.getTableNames);
-    populateOutputTable({
-      "Test": 5,
-      "bob": 4
-    });
+    sqlMethods.executeQuery("SELECT * FROM information_schema.tables;");
   });
 
   /*$("#updateButton").bind("click", function () {
@@ -29,9 +24,3 @@ function populateOutputTable(data) {
   console.log(data);
 
 }
-
-
-$(window).onbeforeunload = function () {
-  resetTables.closeConnectionPool();
-  alert("Closing connection.");
-};
