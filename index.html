@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Amazon Sales Database (Beta)</title>
+
+  <!-- Minified Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- Bootstrap Theme -->
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-4 col-xs-12 bg-default">
+
+
+
+
+
+          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
+            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="displayDropdownMenu" data-toggle="dropdown">
+              Display
+              <span class="caret pull-right"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelled-by="displayDropdownMenu">
+              <button class="btn btn-link" type="button">Items</button>
+              <button class="btn btn-link" type="button">Warehouses</button>
+              <button class="btn btn-link" type="button">Shipping</button>
+              <button class="btn btn-link" type="button">Stock</button>
+              <button class="btn btn-link" type="button">Customers</button>
+              <button class="btn btn-link" type="button">Customer Addresses</button>
+              <button class="btn btn-link" type="button">Transaction History</button>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
+            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="searchDropdownMenu" data-toggle="dropdown">
+              Search
+              <span class="caret pull-right"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelled-by="searchDropdownMenu">
+              <button class="btn btn-link" type="button">Items</button>
+              <button class="btn btn-link" type="button">Warehouses</button>
+              <button class="btn btn-link" type="button">Shipping</button>
+              <button class="btn btn-link" type="button">Stock</button>
+              <button class="btn btn-link" type="button">Customers</button>
+              <button class="btn btn-link" type="button">Customer Addresses</button>
+              <button class="btn btn-link" type="button">Transaction History</button>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
+            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="createDropdownMenu" data-toggle="dropdown">
+              Create
+              <span class="caret pull-right"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelled-by="createDropdownMenu">
+              <button class="btn btn-link" type="button">Item</button>
+              <button class="btn btn-link" type="button">Warehouse</button>
+              <button class="btn btn-link" type="button">Shipping</button>
+              <button class="btn btn-link" type="button">Stock</button>
+              <button class="btn btn-link" type="button">Customer</button>
+              <button class="btn btn-link" type="button">Customer Address</button>
+              <button class="btn btn-link" type="button">Transaction</button>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
+            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="updateDropdownMenu" data-toggle="dropdown">
+              Update
+              <span class="caret pull-right"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelled-by="updateDropdownMenu">
+              <button class="btn btn-link" type="button">Item</button>
+              <button class="btn btn-link" type="button">Warehouse</button>
+              <button class="btn btn-link" type="button">Shipping</button>
+              <button class="btn btn-link" type="button">Stock</button>
+              <button class="btn btn-link" type="button">Customer</button>
+              <button class="btn btn-link" type="button">Customer Address</button>
+              <button class="btn btn-link" type="button">Transaction</button>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
+            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="deleteDropdownMenu" data-toggle="dropdown">
+              Delete
+              <span class="caret pull-right"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelled-by="deleteDropdownMenu">
+              <button class="btn btn-link" type="button">Item</button>
+              <button class="btn btn-link" type="button">Warehouse</button>
+              <button class="btn btn-link" type="button">Shipping</button>
+              <button class="btn btn-link" type="button">Stock</button>
+              <button class="btn btn-link" type="button">Customer</button>
+              <button class="btn btn-link" type="button">Customer Address</button>
+              <button class="btn btn-link" type="button">Transaction</button>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-12 bg-primary dropdown open">
+            <button class="col-xs-12 btn btn-link dropdown-toggle btn-white" type="button" id="reportsDropdownMenu" data-toggle="dropdown">
+              Reports
+              <span class="caret pull-right"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelled-by="reportsDropdownMenu">
+              <button class="btn btn-link" type="button">Best Selling Items</button>
+              <button class="btn btn-link" type="button">Worst Selling Items</button>
+              <button class="btn btn-link" type="button">Best Selling Items (State)</button>
+              <button class="btn btn-link" type="button">Worst Selling Items (State)</button>
+              <button class="btn btn-link" type="button">Biggest Spenders</button>
+              <button class="btn btn-link" type="button" id="testButton">Test</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-8 col-xs-12 bg-default">
+          <table class="table table-condensed table-hover" id="outputTable">
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Percentage</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Sean</td>
+              <td>Don</td>
+              <td>50%</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Goodwin</td>
+              <td>Kate</td>
+              <td>75%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--JQuery and Javascript files, linked at the bottom of the page -->
+  <script>
+    window.jQuery = window.$ = require('jquery');
+  </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/pageScript.js"></script>
+</body>
+</html>

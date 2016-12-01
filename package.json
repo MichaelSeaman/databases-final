@@ -1,0 +1,23 @@
+{
+  "name": "databases-final",
+  "version": "1.0.0",
+  "description": "Amazon database mangement application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seama107/databases-final.git"
+  },
+  "author": "Michael Seaman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seama107/databases-final/issues"
+  },
+  "homepage": "https://github.com/seama107/databases-final#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "mysql": "^2.12.0"
+  }
+}

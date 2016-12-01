@@ -1,0 +1,7 @@
+.btn-white,
+.btn-white:hover,
+.btn-white:active,
+.btn-white:enabled
+{
+  color: white;
+}
