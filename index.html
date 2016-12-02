@@ -27,25 +27,25 @@
           </div>
           <div class="collapse" id="displayCollapse">
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Items</button>
+              <button class="btn btn-link" type="button" id="displayItemsButton">Items</button>
             </div>
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Warehouses</button>
+              <button class="btn btn-link" type="button" id="displayWarehousesButton">Warehouses</button>
             </div>
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Shipping</button>
+              <button class="btn btn-link" type="button" id="displayShippingButton">Shipping</button>
             </div>
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Stock</button>
+              <button class="btn btn-link" type="button" id="displayStockButton">Stock</button>
             </div>
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Customers</button>
+              <button class="btn btn-link" type="button" id="displayCustomersButton">Customers</button>
             </div>
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Customer Addresses</button>
+              <button class="btn btn-link" type="button" id="displayAddressesButton">Customer Addresses</button>
             </div>
             <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button">Transaction History</button>
+              <button class="btn btn-link" type="button" id="displayTransactionsButton">Transaction History</button>
             </div>
           </div>
 
@@ -478,24 +478,28 @@
 
         <div class="col-sm-8 col-xs-12 bg-default">
           <table class="table table-condensed table-hover" id="outputTable">
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Percentage</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Sean</td>
-              <td>Don</td>
-              <td>50%</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Goodwin</td>
-              <td>Kate</td>
-              <td>75%</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Sean</td>
+                <td>Don</td>
+                <td>50%</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Goodwin</td>
+                <td>Kate</td>
+                <td>75%</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

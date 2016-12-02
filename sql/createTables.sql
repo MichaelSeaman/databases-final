@@ -66,3 +66,19 @@ CREATE TABLE amazon_transactions(
   FOREIGN KEY (warehouse_id) REFERENCES amazon_warehouses(warehouse_id),
   FOREIGN KEY (customer_address_id) REFERENCES amazon_customer_addresses(customer_address_id)
 );
+
+INSERT INTO amazon_items(name, description, price, deleted) VALUES ('Apples', 'Granny Smith', 10.20, FALSE );
+
+INSERT INTO amazon_warehouses(name, addr, city, state, deleted) VALUES ('Bob\'s House', '501 Grand St.', 'Topeka', 'KA', FALSE);
+
+INSERT INTO amazon_customers(first_name, last_name, email, username, password, deleted) VALUES ('Bob', 'Saggot', 'sagsby@gmail.com', 'womanizer7', 'boblovesyou89', FALSE);
+
+INSERT INTO amazon_customer_addresses(customer_id, addr, city, state, deleted) VALUES (1, '85 N Griswald', 'Oakland', 'CA', FALSE );
+
+INSERT INTO amazon_warehouse_stock(warehouse_id, item_id, quantity, deleted) VALUES (1, 1, 500000, FALSE );
+
+INSERT INTO amazon_warehouse_ships(warehouse_id, state, deleted) VALUES (1, 'CA', FALSE );
+
+INSERT INTO amazon_warehouse_ships(warehouse_id, state, deleted) VALUES (1, 'KA', FALSE );
+
+INSERT INTO amazon_transactions(customer_id, item_id, quantity, warehouse_id, customer_address_id, deleted) VALUES (1, 1, 10, 1, 1, FALSE );

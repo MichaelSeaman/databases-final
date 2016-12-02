@@ -49,11 +49,10 @@ function executeQuery(queryString, callback) {
     if(err) throw err;
     console.log(queryString + " has connected with ID: " + connection.threadId);
 
-    connection.query(queryString, function (err, rows, fields) {
+    connection.query(queryString, function (err, rows) {
       connection.release();
       if(err) throw err;
       output = rows;
-      rows.fields = fields;
       outStream(output);
     });
 
@@ -61,53 +60,15 @@ function executeQuery(queryString, callback) {
 
 }
 
-/*
-function executeQuery(query, callback) {
-  output = {};
-
-  connection.connect();
-  connection.on("err", function (err) {
-    console.error("Error occured while opening connection.");
-    console.error();
-    return output;
-  });
-  console.log(query.toString() + " has connected with ID: " + connection.threadId);
-
-  var queryObject = connection.query(query);
-  queryObject.on("err", function (err) {
-    console.error("Error in update");
-    console.error(err);
-    return output;
-  });
-
-  queryObject.on("rows", function (rows) {
-    output.rows = rows;
-    console.log("Rows recieved: " + rows);
-  });
-
-  queryObject.on("fields", function (fields) {
-    output.fields = fields;
-    console.log("Fields recieved: " + fields);
-
-  });
-
-  connection.end(function (err) {
-    if(err) {
-      console.error("Error occured while closing connection.");
-      console.error(err);
-    }
-  });
-
-  return output;
+function displayTable(tableName, callback) {
+  var queryString = "SELECT * FROM ?? WHERE deleted = 'false';";
+  var inserts = [tableName];
+  queryString = mysql.format(queryString, inserts);
+  executeQuery(queryString, callback);
 }
 
 
-
-*/
-
-//executeUpdate("INSERT INTO region VALUES(51316, 'Bob')");
-//executeQuery("SELECT * FROM information_schema.tables;");
-
+module.exports.displayTable = displayTable;
 module.exports.executeUpdate = executeUpdate;
 module.exports.executeQuery = executeQuery;
 module.exports.endPool = endPool;
