@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amazon Sales Database (Beta)</title>
 
   <!-- Minified Bootstrap CSS -->
@@ -64,13 +65,19 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchItemsDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsIDModal">
+                    ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Name</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsNameModal">
+                    Name
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Price</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsPriceModal">
+                    Price
+                  </button>
                 </div>
               </div>
             </div>
@@ -82,19 +89,29 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchWarehousesDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesIDModal">
+                    ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Name</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesNameModal">
+                    Name
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Address</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesAddressModal">
+                    Address
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">City</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesCityModal">
+                    City
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">State</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesStateModal">
+                    State
+                  </button>
                 </div>
               </div>
             </div>
@@ -106,13 +123,19 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchShippingDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Shipping ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingIDModal">
+                    Shipping ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingWarehouseIDModal">
+                    Warehouse ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">State</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingStateModal">
+                    State
+                  </button>
                 </div>
               </div>
             </div>
@@ -124,16 +147,24 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchStockDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Stock ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockIDModal">
+                    Stock ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockWarehouseIDModal">
+                    Warehouse ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Item ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockItemIDModal">
+                    Item ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Quantity</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockQuantityModal">
+                    Quantity
+                  </button>
                 </div>
               </div>
             </div>
@@ -145,22 +176,34 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchCustomersDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersIDModal">
+                    ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">First Name</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersFirstNameModal">
+                    First Name
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Last Name</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersLastNameModal">
+                    Last Name
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Email</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersEmailModal">
+                    Email
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Username</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersUsernameModal">
+                    Username
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Password</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersPasswordModal">
+                    Password
+                  </button>
                 </div>
               </div>
             </div>
@@ -172,19 +215,29 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchCustomerAddressesDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Address ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesIDModal">
+                    Address ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Customer ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesCustomerIDModal">
+                    Customer ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Address</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesAddressModal">
+                    Address
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">City</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesCityModal">
+                    City
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">State</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesStateModal">
+                    State
+                  </button>
                 </div>
               </div>
             </div>
@@ -196,26 +249,680 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchTransactionsDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Transaction ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionIDModal">
+                    Transaction ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Customer ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionCustomerIDModal">
+                    Customer ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Item ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionItemIDModal">
+                    Item ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Warehouse ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionWarehouseIDModal">
+                    Warehouse ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Address ID</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionAddressIDModal">
+                    Address ID
+                  </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button">Quantity</button>
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionQuantityModal">
+                    Quantity
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Search Modals -->
+          <div id="searchItemsIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Items</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchItemsIDInput">Item ID:</label>
+                      <input type="text" id="searchItemsIDInput">
+                      <button type="submit" class="btn btn-info" id="searchItemsIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchItemsNameModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Items</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchItemsNameInput">Item Name:</label>
+                      <input type="text" name="searchItemsNameInput" id="searchItemsNameInput">
+                      <button type="submit" class="btn btn-info" id="searchItemsNameSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchItemsPriceModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Items</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchItemsPriceInput">Item Price:</label>
+                      <input type="text" id="searchItemsPriceInput">
+                      <button type="submit" class="btn btn-info" id="searchItemsPriceSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchWarehousesIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Warehouses</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchWarehousesIDInput">Warehouse ID:</label>
+                      <input type="text" id="searchWarehousesIDInput">
+                      <button type="submit" class="btn btn-info" id="searchWarehousesIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchWarehousesNameModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Warehouses</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchWarehousesNameInput">Warehouse Name:</label>
+                      <input type="text" id="searchWarehousesNameInput">
+                      <button type="submit" class="btn btn-info" id="searchWarehousesNameSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchWarehousesAddressModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Warehouses</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchWarehousesAddressInput">Warehouse Addresse:</label>
+                      <input type="text" id="searchWarehousesAddressInput">
+                      <button type="submit" class="btn btn-info" id="searchWarehousesAddressSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchWarehousesCityModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Warehouses</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchWarehousesCityInput">Warehouse City:</label>
+                      <input type="text" id="searchWarehousesCityInput">
+                      <button type="submit" class="btn btn-info" id="searchWarehousesCitySubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchWarehousesStateModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Warehouses</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchWarehousesStateInput">Warehouse State Code:</label>
+                      <input type="text" id="searchWarehousesStateInput">
+                      <button type="submit" class="btn btn-info" id="searchWarehousesStateSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchShippingIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Shipping</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchShippingIDInput">Shipping ID:</label>
+                      <input type="text" id="searchShippingIDInput">
+                      <button type="submit" class="btn btn-info" id="searchShippingIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchShippingWarehouseIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Shipping</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchShippingWarehouseIDInput">Warehouse ID:</label>
+                      <input type="text" id="searchShippingWarehouseIDInput">
+                      <button type="submit" class="btn btn-info" id="searchShippingWarehouseIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchShippingStateModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Shipping</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchShippingStateInput">State Code:</label>
+                      <input type="text" id="searchShippingStateInput">
+                      <button type="submit" class="btn btn-info" id="searchShippingStateSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchStockIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Stock</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchStockIDInput">Stock ID:</label>
+                      <input type="text" id="searchStockIDInput">
+                      <button type="submit" class="btn btn-info" id="searchStockIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchStockWarehouseIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Stock</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchStockWarehouseIDInput">Warehouse ID:</label>
+                      <input type="text" id="searchStockWarehouseIDInput">
+                      <button type="submit" class="btn btn-info" id="searchStockWarehouseIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="searchStockItemIDModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">&times;</a>
+                  <h4 class="modal-title">Search Stock</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="post" onsubmit="return false;">
+                    <div class="form-group text-center">
+                      <label for="searchStockItemIDInput">Item ID:</label>
+                      <input type="text" id="searchStockItemIDInput">
+                      <button type="submit" class="btn btn-info" id="searchStockItemIDSubmit" data-dismiss="modal">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="searchStockQuantityModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Stock</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchStockQuantityInput">Quantity:</label>
+                       <input type="text" id="searchStockQuantityInput">
+                       <button type="submit" class="btn btn-info" id="searchStockQuantitySubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <div id="searchCustomersIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customers</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchCustomersIDInput">Customers ID:</label>
+                       <input type="text" id="searchCustomersIDInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchCustomersFirstNameModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customers</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchCustomersFirstNameInput">First Name:</label>
+                       <input type="text" id="searchCustomersFirstNameInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersFirstNameSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchCustomersLastNameModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customers</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchCustomersLastNameInput">Last Name:</label>
+                       <input type="text" id="searchCustomersLastNameInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersLastNameSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchCustomersEmailModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customers</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchCustomersEmailInput">Email:</label>
+                       <input type="text" id="searchCustomersEmailInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersEmailSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchCustomersUsernameModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customers</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchCustomersUsernameInput">Username:</label>
+                       <input type="text" id="searchCustomersUsernameInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersUsernameSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchCustomersPasswordModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customers</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchCustomersPasswordInput">Password:</label>
+                       <input type="text" id="searchCustomersPasswordInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersPasswordSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchAddressesIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customer Addresses</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchAddressesIDInput">Address ID:</label>
+                       <input type="text" id="searchAddressesIDInput">
+                       <button type="submit" class="btn btn-info" id="searchAddressesIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchAddressesCustomerIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customer Addresses</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchAddressesCustomerIDInput">Customer ID:</label>
+                       <input type="text" id="searchAddressesCustomerIDInput">
+                       <button type="submit" class="btn btn-info" id="searchAddressesCustomerIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchAddressesAddressModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customer Addresses</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchAddressesAddressInput">Address:</label>
+                       <input type="text" id="searchAddressesAddressInput">
+                       <button type="submit" class="btn btn-info" id="searchAddressesAddressSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchAddressesCityModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customer Addresses</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchAddressesCityInput">City:</label>
+                       <input type="text" id="searchAddressesCityInput">
+                       <button type="submit" class="btn btn-info" id="searchAddressesCitySubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchAddressesStateModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Customer Addresses</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchAddressesStateInput">State Code:</label>
+                       <input type="text" id="searchAddressesStateInput">
+                       <button type="submit" class="btn btn-info" id="searchAddressesStateSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchTransactionIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Transactions</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchTransactionIDInput">Transaction ID:</label>
+                       <input type="text" id="searchTransactionIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchTransactionCustomerIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Transactions</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchTransactionCustomerIDInput">Customer ID:</label>
+                       <input type="text" id="searchTransactionCustomerIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionCustomerIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchTransactionItemIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Transactions</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchTransactionItemIDInput">Item ID:</label>
+                       <input type="text" id="searchTransactionItemIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionItemIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchTransactionWarehouseIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Transactions</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchTransactionWarehouseIDInput">Warehouse ID:</label>
+                       <input type="text" id="searchTransactionWarehouseIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionWarehouseIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchTransactionAddressIDModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Transactions</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchTransactionAddressIDInput">Customer Address ID:</label>
+                       <input type="text" id="searchTransactionAddressIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionAddressIDSubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          <div id="searchTransactionQuantityModal" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <a class="close" data-dismiss="modal">&times;</a>
+                   <h4 class="modal-title">Search Transactions</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form method="post" onsubmit="return false;">
+                     <div class="form-group text-center">
+                       <label for="searchTransactionQuantityInput">Quantity:</label>
+                       <input type="text" id="searchTransactionQuantityInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionQuantitySubmit" data-dismiss="modal">Submit</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+
 
           <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#createCollapse">
             <button class="col-xs-12 btn btn-link btn-white" type="button">
@@ -477,27 +1184,19 @@
         </div>
 
         <div class="col-sm-8 col-xs-12 bg-default">
+          <h3 class="text-center" id="taskLabel">Introduction</h2>
           <table class="table table-condensed table-hover" id="outputTable">
             <thead>
               <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Percentage</th>
+                <th>Welecome to Amazon's US Warehouse DB Application.</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Sean</td>
-                <td>Don</td>
-                <td>50%</td>
+                <td>Get started by creating/displaying records with the menu.</td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Goodwin</td>
-                <td>Kate</td>
-                <td>75%</td>
+                <td>Or, go to 'Generate Reports' to export files.</td>
               </tr>
             </tbody>
           </table>
@@ -510,7 +1209,7 @@
   <script>
     window.jQuery = window.$ = require('jquery');
   </script>
-  <script src="js/jquery.min.js"></script>
+  <!--<script src="js/jquery.min.js"></script>-->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/pageScript.js"></script>
 </body>

@@ -29,16 +29,22 @@ function executeUpdate(updateString, callback) {
   var affectedRows = -1;
 
   pool.getConnection(function (err, connection) {
-    if(err) throw err;
+    if(err) {
+      outStream(affectedRows, err);
+      throw err;
+    }
     console.log(updateString + " has connected with ID: " + connection.threadId);
 
     connection.query(updateString, function (err, result) {
       connection.release();
-      if(err) throw err;
+      if(err) {
+        outStream(affectedRows, err);
+        throw err;
+      }
       affectedRows = result.affectedRows;
       outStream(affectedRows);
     });
-  })
+  });
 }
 
 function executeQuery(queryString, callback) {
@@ -46,18 +52,31 @@ function executeQuery(queryString, callback) {
   var output = {};
 
   pool.getConnection(function (err, connection) {
-    if(err) throw err;
+    if(err) {
+      outStream(output, err);
+      throw err;
+    }
     console.log(queryString + " has connected with ID: " + connection.threadId);
 
     connection.query(queryString, function (err, rows) {
       connection.release();
-      if(err) throw err;
+      if(err) {
+        outStream(output, err);
+        throw err;
+      }
       output = rows;
       outStream(output);
     });
 
   });
 
+}
+
+function selectStar(tableName, callback) {
+  var queryString = "SELECT * FROM ??;";
+  var inserts = [tableName];
+  queryString = mysql.format(queryString, inserts);
+  executeQuery(queryString, callback);
 }
 
 function displayTable(tableName, callback) {
@@ -67,7 +86,15 @@ function displayTable(tableName, callback) {
   executeQuery(queryString, callback);
 }
 
+function searchTableByColumn(tableName, columnName, value, callback) {
+  var queryString = "SELECT * FROM ?? WHERE ?? = ? AND deleted = 'false';";
+  var inserts = [tableName, columnName, value];
+  queryString = mysql.format(queryString, inserts);
+  executeQuery(queryString, callback);
+}
 
+module.exports.searchTableByColumn = searchTableByColumn;
+module.exports.selectStar = selectStar;
 module.exports.displayTable = displayTable;
 module.exports.executeUpdate = executeUpdate;
 module.exports.executeQuery = executeQuery;

@@ -7,7 +7,9 @@ electron.app.on("ready", function () {
   });
   mainWindow.maximize();
   mainWindow.loadURL("file://" + __dirname + "/index.html");
-  mainWindow.openDevTools();
+  if(process.argv[2] == "debug") {
+    mainWindow.openDevTools();
+  }
   mainWindow.on("closed", function () {
     mainWindow = null;
     sqlMethods.endPool();
