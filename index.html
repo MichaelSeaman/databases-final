@@ -65,7 +65,7 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchItemsDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsItemIDModal">
                     ID
                   </button>
                 </div>
@@ -89,7 +89,7 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchWarehousesDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesWarehouseIDModal">
                     ID
                   </button>
                 </div>
@@ -123,7 +123,7 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchShippingDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingShippingIDModal">
                     Shipping ID
                   </button>
                 </div>
@@ -147,7 +147,7 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchStockDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockStockIDModal">
                     Stock ID
                   </button>
                 </div>
@@ -176,7 +176,7 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchCustomersDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersCustomerIDModal">
                     ID
                   </button>
                 </div>
@@ -215,7 +215,7 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchCustomerAddressesDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesAddressIDModal">
                     Address ID
                   </button>
                 </div>
@@ -249,32 +249,32 @@
               </button>
               <div class="dropdown-menu" aria-labelled-by="searchTransactionsDropdown">
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsTransactionIDModal">
                     Transaction ID
                   </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionCustomerIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsCustomerIDModal">
                     Customer ID
                   </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionItemIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsItemIDModal">
                     Item ID
                   </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionWarehouseIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsWarehouseIDModal">
                     Warehouse ID
                   </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionAddressIDModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsAddressIDModal">
                     Address ID
                   </button>
                 </div>
                 <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionQuantityModal">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsQuantityModal">
                     Quantity
                   </button>
                 </div>
@@ -283,7 +283,7 @@
           </div>
 
           <!-- Search Modals -->
-          <div id="searchItemsIDModal" class="modal fade" role="dialog">
+          <div id="searchItemsItemIDModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -293,9 +293,9 @@
                 <div class="modal-body">
                   <form method="post" onsubmit="return false;">
                     <div class="form-group text-center">
-                      <label for="searchItemsIDInput">Item ID:</label>
-                      <input type="text" id="searchItemsIDInput">
-                      <button type="submit" class="btn btn-info" id="searchItemsIDSubmit" data-dismiss="modal">Submit</button>
+                      <label for="searchItemsItemIDInput">Item ID:</label>
+                      <input type="text" id="searchItemsItemIDInput">
+                      <button type="submit" class="btn btn-info" id="searchItemsItemIDSubmit" data-dismiss="modal">Submit</button>
                     </div>
                   </form>
                 </div>
@@ -343,7 +343,7 @@
             </div>
           </div>
 
-          <div id="searchWarehousesIDModal" class="modal fade" role="dialog">
+          <div id="searchWarehousesWarehouseIDModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -353,9 +353,9 @@
                 <div class="modal-body">
                   <form method="post" onsubmit="return false;">
                     <div class="form-group text-center">
-                      <label for="searchWarehousesIDInput">Warehouse ID:</label>
-                      <input type="text" id="searchWarehousesIDInput">
-                      <button type="submit" class="btn btn-info" id="searchWarehousesIDSubmit" data-dismiss="modal">Submit</button>
+                      <label for="searchWarehousesWarehouseIDInput">Warehouse ID:</label>
+                      <input type="text" id="searchWarehousesWarehouseIDInput">
+                      <button type="submit" class="btn btn-info" id="searchWarehousesWarehouseIDSubmit" data-dismiss="modal">Submit</button>
                     </div>
                   </form>
                 </div>
@@ -443,7 +443,7 @@
             </div>
           </div>
 
-          <div id="searchShippingIDModal" class="modal fade" role="dialog">
+          <div id="searchShippingShippingIDModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -453,9 +453,9 @@
                 <div class="modal-body">
                   <form method="post" onsubmit="return false;">
                     <div class="form-group text-center">
-                      <label for="searchShippingIDInput">Shipping ID:</label>
-                      <input type="text" id="searchShippingIDInput">
-                      <button type="submit" class="btn btn-info" id="searchShippingIDSubmit" data-dismiss="modal">Submit</button>
+                      <label for="searchShippingShippingIDInput">Shipping ID:</label>
+                      <input type="text" id="searchShippingShippingIDInput">
+                      <button type="submit" class="btn btn-info" id="searchShippingShippingIDSubmit" data-dismiss="modal">Submit</button>
                     </div>
                   </form>
                 </div>
@@ -503,7 +503,7 @@
             </div>
           </div>
 
-          <div id="searchStockIDModal" class="modal fade" role="dialog">
+          <div id="searchStockStockIDModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -513,9 +513,9 @@
                 <div class="modal-body">
                   <form method="post" onsubmit="return false;">
                     <div class="form-group text-center">
-                      <label for="searchStockIDInput">Stock ID:</label>
-                      <input type="text" id="searchStockIDInput">
-                      <button type="submit" class="btn btn-info" id="searchStockIDSubmit" data-dismiss="modal">Submit</button>
+                      <label for="searchStockStockIDInput">Stock ID:</label>
+                      <input type="text" id="searchStockStockIDInput">
+                      <button type="submit" class="btn btn-info" id="searchStockStockIDSubmit" data-dismiss="modal">Submit</button>
                     </div>
                   </form>
                 </div>
@@ -582,7 +582,7 @@
              </div>
            </div>
 
-           <div id="searchCustomersIDModal" class="modal fade" role="dialog">
+           <div id="searchCustomersCustomerIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -592,9 +592,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchCustomersIDInput">Customers ID:</label>
-                       <input type="text" id="searchCustomersIDInput">
-                       <button type="submit" class="btn btn-info" id="searchCustomersIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchCustomersCustomerIDInput">Customers ID:</label>
+                       <input type="text" id="searchCustomersCustomerIDInput">
+                       <button type="submit" class="btn btn-info" id="searchCustomersCustomerIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -702,7 +702,7 @@
              </div>
            </div>
 
-          <div id="searchAddressesIDModal" class="modal fade" role="dialog">
+          <div id="searchAddressesAddressIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -712,9 +712,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchAddressesIDInput">Address ID:</label>
-                       <input type="text" id="searchAddressesIDInput">
-                       <button type="submit" class="btn btn-info" id="searchAddressesIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchAddressesAddressIDInput">Address ID:</label>
+                       <input type="text" id="searchAddressesAddressIDInput">
+                       <button type="submit" class="btn btn-info" id="searchAddressesAddressIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -802,7 +802,7 @@
              </div>
            </div>
 
-          <div id="searchTransactionIDModal" class="modal fade" role="dialog">
+          <div id="searchTransactionsTransactionIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -812,9 +812,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchTransactionIDInput">Transaction ID:</label>
-                       <input type="text" id="searchTransactionIDInput">
-                       <button type="submit" class="btn btn-info" id="searchTransactionIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchTransactionsTransactionIDInput">Transaction ID:</label>
+                       <input type="text" id="searchTransactionsTransactionIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionsTransactionIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -822,7 +822,7 @@
              </div>
            </div>
 
-          <div id="searchTransactionCustomerIDModal" class="modal fade" role="dialog">
+          <div id="searchTransactionsCustomerIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -832,9 +832,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchTransactionCustomerIDInput">Customer ID:</label>
-                       <input type="text" id="searchTransactionCustomerIDInput">
-                       <button type="submit" class="btn btn-info" id="searchTransactionCustomerIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchTransactionsCustomerIDInput">Customer ID:</label>
+                       <input type="text" id="searchTransactionsCustomerIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionsCustomerIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -842,7 +842,7 @@
              </div>
            </div>
 
-          <div id="searchTransactionItemIDModal" class="modal fade" role="dialog">
+          <div id="searchTransactionsItemIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -852,9 +852,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchTransactionItemIDInput">Item ID:</label>
-                       <input type="text" id="searchTransactionItemIDInput">
-                       <button type="submit" class="btn btn-info" id="searchTransactionItemIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchTransactionsItemIDInput">Item ID:</label>
+                       <input type="text" id="searchTransactionsItemIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionsItemIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -862,7 +862,7 @@
              </div>
            </div>
 
-          <div id="searchTransactionWarehouseIDModal" class="modal fade" role="dialog">
+          <div id="searchTransactionsWarehouseIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -872,9 +872,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchTransactionWarehouseIDInput">Warehouse ID:</label>
-                       <input type="text" id="searchTransactionWarehouseIDInput">
-                       <button type="submit" class="btn btn-info" id="searchTransactionWarehouseIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchTransactionsWarehouseIDInput">Warehouse ID:</label>
+                       <input type="text" id="searchTransactionsWarehouseIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionsWarehouseIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -882,7 +882,7 @@
              </div>
            </div>
 
-          <div id="searchTransactionAddressIDModal" class="modal fade" role="dialog">
+          <div id="searchTransactionsAddressIDModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -892,9 +892,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchTransactionAddressIDInput">Customer Address ID:</label>
-                       <input type="text" id="searchTransactionAddressIDInput">
-                       <button type="submit" class="btn btn-info" id="searchTransactionAddressIDSubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchTransactionsAddressIDInput">Customer Address ID:</label>
+                       <input type="text" id="searchTransactionsAddressIDInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionsAddressIDSubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>
@@ -902,7 +902,7 @@
              </div>
            </div>
 
-          <div id="searchTransactionQuantityModal" class="modal fade" role="dialog">
+          <div id="searchTransactionsQuantityModal" class="modal fade" role="dialog">
              <div class="modal-dialog">
                <div class="modal-content">
                  <div class="modal-header">
@@ -912,9 +912,9 @@
                  <div class="modal-body">
                    <form method="post" onsubmit="return false;">
                      <div class="form-group text-center">
-                       <label for="searchTransactionQuantityInput">Quantity:</label>
-                       <input type="text" id="searchTransactionQuantityInput">
-                       <button type="submit" class="btn btn-info" id="searchTransactionQuantitySubmit" data-dismiss="modal">Submit</button>
+                       <label for="searchTransactionsQuantityInput">Quantity:</label>
+                       <input type="text" id="searchTransactionsQuantityInput">
+                       <button type="submit" class="btn btn-info" id="searchTransactionsQuantitySubmit" data-dismiss="modal">Submit</button>
                      </div>
                    </form>
                  </div>

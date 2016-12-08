@@ -1,0 +1,254 @@
+{
+  "tables" : [
+    {
+      "identifier" : "Customers",
+      "label" : "Customers",
+      "sql_table_name" : "amazon_customers",
+      "sql_cols" : [
+        {
+          "col_name" : "customer_id",
+          "type" : "Int",
+          "label" : "ID:",
+          "name" : "CustomerID"
+        },
+        {
+          "col_name" : "first_name",
+          "type" : "String",
+          "label" : "First Name:",
+          "name" : "FirstName"
+        },
+        {
+          "col_name" : "last_name",
+          "type" : "String",
+          "label" : "Last Name:",
+          "name" : "LastName"
+        },
+        {
+          "col_name" : "email",
+          "type" : "String",
+          "label" : "Email:",
+          "name" : "Email"
+        },
+        {
+          "col_name" : "username",
+          "type" : "String",
+          "label" : "Username:",
+          "name" : "Username"
+        },
+        {
+          "col_name" : "password",
+          "type" : "String",
+          "label" : "Password:",
+          "name" : "Password"
+        }
+      ]
+    },
+    {
+      "identifier" : "Items",
+      "label" : "Items",
+      "sql_table_name" : "amazon_items",
+      "sql_cols" : [
+        {
+          "col_name" : "item_id",
+          "type" : "Int",
+          "label" : "ID:",
+          "name" : "ItemID"
+        },
+        {
+          "col_name" : "name",
+          "type" : "String",
+          "label" : "Name:",
+          "name" : "Name"
+        },
+        {
+          "col_name" : "description",
+          "type" : "String",
+          "label" : "Description:",
+          "name" : "Description"
+        },
+        {
+          "col_name" : "price",
+          "type" : "Float",
+          "label" : "Price:",
+          "name" : "Price"
+        }
+      ]
+    },
+    {
+      "identifier" : "Warehouses",
+      "label" : "Warehouses",
+      "sql_table_name" : "amazon_warehouses",
+      "sql_cols" : [
+        {
+          "col_name" : "warehouse_id",
+          "type" : "Int",
+          "label" : "ID:",
+          "name" : "WarehouseID"
+        },
+        {
+          "col_name" : "name",
+          "type" : "String",
+          "label" : "Name:",
+          "name" : "Name"
+        },
+        {
+          "col_name" : "addr",
+          "type" : "String",
+          "label" : "Address:",
+          "name" : "Address"
+        },
+        {
+          "col_name" : "city",
+          "type" : "String",
+          "label" : "City:",
+          "name" : "City"
+        },
+        {
+          "col_name" : "state",
+          "type" : "String",
+          "label" : "State Code:",
+          "name" : "State"
+        }
+      ]
+    },
+    {
+      "identifier" : "Addresses",
+      "label" : "Customer Addresses",
+      "sql_table_name" : "amazon_customer_addresses",
+      "sql_cols" : [
+        {
+          "col_name" : "customer_address_id",
+          "type" : "Int",
+          "label" : "Address ID:",
+          "name" : "AddressID"
+        },
+        {
+          "col_name" : "customer_id",
+          "type" : "Int",
+          "label" : "Customer ID:",
+          "name" : "CustomerID"
+
+        },
+        {
+          "col_name" : "addr",
+          "type" : "String",
+          "label" : "Address:",
+          "name" : "Address"
+        },
+        {
+          "col_name" : "city",
+          "type" : "String",
+          "label" : "City:",
+          "name" : "City"
+        },
+        {
+          "col_name" : "state",
+          "type" : "String",
+          "label" : "State Code:",
+          "name" : "State"
+        }
+      ]
+    },
+    {
+      "identifier" : "Stock",
+      "label" : "Warehouse Stock",
+      "sql_table_name" : "amazon_warehouse_stock",
+      "sql_cols" : [
+        {
+          "col_name" : "stock_id",
+          "type" : "Int",
+          "label" : "Stock ID:",
+          "name" : "StockID"
+        },
+        {
+          "col_name" : "warehouse_id",
+          "type" : "Int",
+          "label" : "warehouse ID:",
+          "name" : "WarehouseID"
+        },
+        {
+          "col_name" : "item_id",
+          "type" : "Int",
+          "label" : "Item ID:",
+          "name" : "ItemID"
+        },
+        {
+          "col_name" : "quantity",
+          "type" : "Int",
+          "label" : "Quantity:",
+          "name" : "Quantity"
+        }
+      ]
+    },
+    {
+      "identifier" : "Shipping",
+      "label" : "Warehouse Shipping",
+      "sql_table_name" : "amazon_warehouse_ships",
+      "sql_cols" : [
+        {
+          "col_name" : "ship_id",
+          "type" : "Int",
+          "label" : "Ship ID:",
+          "name" : "ShippingID"
+        },
+        {
+          "col_name" : "warehouse_id",
+          "type" : "Int",
+          "label" : "Warehouse ID:",
+          "name" : "WarehouseID"
+        },
+        {
+          "col_name" : "state",
+          "type" : "String",
+          "label" : "State Code:",
+          "name" : "State"
+        }
+      ]
+    },
+    {
+      "identifier" : "Transactions",
+      "label" : "Transactions",
+      "sql_table_name" : "amazon_transactions",
+      "sql_cols" : [
+        {
+          "col_name" : "transaction_id",
+          "type" : "Int",
+          "label" : "Transaction ID:",
+          "name" : "TransactionID"
+        },
+        {
+          "col_name" : "customer_id",
+          "type" : "Int",
+          "label" : "Customer ID:",
+          "name" : "CustomerID"
+        },
+        {
+          "col_name" : "item_id",
+          "type" : "Int",
+          "label" : "Item ID:",
+          "name" : "ItemID"
+        },
+        {
+          "col_name" : "quantity",
+          "type" : "Int",
+          "label" : "Quantity:",
+          "name" : "Quantity"
+        },
+        {
+          "col_name" : "warehouse_id",
+          "type" : "Int",
+          "label" : "Warehouse ID:",
+          "name" : "WarehouseID"
+        },
+        {
+          "col_name" : "customer_address_id",
+          "type" : "Int",
+          "label" : "Address ID:",
+          "name" : "AddressID"
+        }
+      ]
+    }
+
+
+  ]
+}
