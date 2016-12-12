@@ -24,29 +24,6 @@ function endPool() {
   pool.end();
 }
 
-function executeUpdate(updateString, callback) {
-  outStream = callback || console.log;
-  var affectedRows = -1;
-
-  pool.getConnection(function (err, connection) {
-    if(err) {
-      outStream(affectedRows, err);
-      throw err;
-    }
-    console.log(updateString + " has connected with ID: " + connection.threadId);
-
-    connection.query(updateString, function (err, result) {
-      connection.release();
-      if(err) {
-        outStream(affectedRows, err);
-        throw err;
-      }
-      affectedRows = result.affectedRows;
-      outStream(affectedRows);
-    });
-  });
-}
-
 function executeQuery(queryString, callback) {
   outStream = callback || console.log;
   var output = {};
@@ -72,6 +49,27 @@ function executeQuery(queryString, callback) {
 
 }
 
+function insertValuesToTable(values, colNames, tableName, callback) {
+  //Inserts values into the columns of the table provided, and
+  //sends the data to the callback
+  var updateString = "INSERT INTO ??(??";
+  for (var i = 0; i < colNames.length - 1; i++) {
+    updateString += ", ??";
+  }
+  updateString += ") VALUES (?";
+  for (var i = 0; i < values.length - 1; i++) {
+    updateString += ", ?";
+  }
+  updateString += ");";
+
+  updateString = mysql.format(updateString, tableName);
+  updateString = mysql.format(updateString, colNames);
+  updateString = mysql.format(updateString, values);
+
+  executeQuery(updateString, callback);
+
+}
+
 function selectStar(tableName, callback) {
   var queryString = "SELECT * FROM ??;";
   var inserts = [tableName];
@@ -93,9 +91,9 @@ function searchTableByColumn(tableName, columnName, value, callback) {
   executeQuery(queryString, callback);
 }
 
+module.exports.insertValuesToTable = insertValuesToTable;
 module.exports.searchTableByColumn = searchTableByColumn;
 module.exports.selectStar = selectStar;
 module.exports.displayTable = displayTable;
-module.exports.executeUpdate = executeUpdate;
 module.exports.executeQuery = executeQuery;
 module.exports.endPool = endPool;

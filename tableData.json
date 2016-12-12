@@ -1,6 +1,7 @@
 {
   "tables" : [
     {
+      "singular" : "Customer",
       "identifier" : "Customers",
       "label" : "Customers",
       "sql_table_name" : "amazon_customers",
@@ -8,42 +9,49 @@
         {
           "col_name" : "customer_id",
           "type" : "Int",
-          "label" : "ID:",
-          "name" : "CustomerID"
+          "label" : "Customer ID",
+          "name" : "CustomerID",
+          "auto" : true
         },
         {
           "col_name" : "first_name",
           "type" : "String",
-          "label" : "First Name:",
-          "name" : "FirstName"
+          "label" : "First Name",
+          "name" : "FirstName",
+          "auto" : false
         },
         {
           "col_name" : "last_name",
           "type" : "String",
-          "label" : "Last Name:",
-          "name" : "LastName"
+          "label" : "Last Name",
+          "name" : "LastName",
+          "auto" : false
         },
         {
           "col_name" : "email",
           "type" : "String",
-          "label" : "Email:",
-          "name" : "Email"
+          "label" : "Email",
+          "name" : "Email",
+          "auto" : false
         },
         {
           "col_name" : "username",
           "type" : "String",
-          "label" : "Username:",
-          "name" : "Username"
+          "label" : "Username",
+          "name" : "Username",
+          "auto" : false
         },
         {
           "col_name" : "password",
           "type" : "String",
-          "label" : "Password:",
-          "name" : "Password"
+          "label" : "Password",
+          "name" : "Password",
+          "auto" : false
         }
       ]
     },
     {
+      "singular" : "Item",
       "identifier" : "Items",
       "label" : "Items",
       "sql_table_name" : "amazon_items",
@@ -51,30 +59,35 @@
         {
           "col_name" : "item_id",
           "type" : "Int",
-          "label" : "ID:",
-          "name" : "ItemID"
+          "label" : "Item ID",
+          "name" : "ItemID",
+          "auto" : true
         },
         {
           "col_name" : "name",
           "type" : "String",
-          "label" : "Name:",
-          "name" : "Name"
+          "label" : "Item Name",
+          "name" : "Name",
+          "auto" : false
         },
         {
           "col_name" : "description",
           "type" : "String",
-          "label" : "Description:",
-          "name" : "Description"
+          "label" : "Description",
+          "name" : "Description",
+          "auto" : false
         },
         {
           "col_name" : "price",
           "type" : "Float",
-          "label" : "Price:",
-          "name" : "Price"
+          "label" : "Price",
+          "name" : "Price",
+          "auto" : false
         }
       ]
     },
     {
+      "singular" : "Warehouse",
       "identifier" : "Warehouses",
       "label" : "Warehouses",
       "sql_table_name" : "amazon_warehouses",
@@ -82,36 +95,42 @@
         {
           "col_name" : "warehouse_id",
           "type" : "Int",
-          "label" : "ID:",
-          "name" : "WarehouseID"
+          "label" : "Warehouse ID",
+          "name" : "WarehouseID",
+          "auto" : true
         },
         {
           "col_name" : "name",
           "type" : "String",
-          "label" : "Name:",
-          "name" : "Name"
+          "label" : "Warehouse Name",
+          "name" : "Name",
+          "auto" : false
         },
         {
           "col_name" : "addr",
           "type" : "String",
-          "label" : "Address:",
-          "name" : "Address"
+          "label" : "Address",
+          "name" : "Address",
+          "auto" : false
         },
         {
           "col_name" : "city",
           "type" : "String",
-          "label" : "City:",
-          "name" : "City"
+          "label" : "City",
+          "name" : "City",
+          "auto" : false
         },
         {
           "col_name" : "state",
           "type" : "String",
-          "label" : "State Code:",
-          "name" : "State"
+          "label" : "State Code",
+          "name" : "State",
+          "auto" : false
         }
       ]
     },
     {
+      "singular" : "Address",
       "identifier" : "Addresses",
       "label" : "Customer Addresses",
       "sql_table_name" : "amazon_customer_addresses",
@@ -119,37 +138,43 @@
         {
           "col_name" : "customer_address_id",
           "type" : "Int",
-          "label" : "Address ID:",
-          "name" : "AddressID"
+          "label" : "Address ID",
+          "name" : "AddressID",
+          "auto" : true
         },
         {
           "col_name" : "customer_id",
           "type" : "Int",
-          "label" : "Customer ID:",
-          "name" : "CustomerID"
+          "label" : "Customer ID",
+          "name" : "CustomerID",
+          "auto" : false
 
         },
         {
           "col_name" : "addr",
           "type" : "String",
-          "label" : "Address:",
-          "name" : "Address"
+          "label" : "Address",
+          "name" : "Address",
+          "auto" : false
         },
         {
           "col_name" : "city",
           "type" : "String",
-          "label" : "City:",
-          "name" : "City"
+          "label" : "City",
+          "name" : "City",
+          "auto" : false
         },
         {
           "col_name" : "state",
           "type" : "String",
-          "label" : "State Code:",
-          "name" : "State"
+          "label" : "State Code",
+          "name" : "State",
+          "auto" : false
         }
       ]
     },
     {
+      "singular" : "Stock",
       "identifier" : "Stock",
       "label" : "Warehouse Stock",
       "sql_table_name" : "amazon_warehouse_stock",
@@ -157,30 +182,35 @@
         {
           "col_name" : "stock_id",
           "type" : "Int",
-          "label" : "Stock ID:",
-          "name" : "StockID"
+          "label" : "Stock ID",
+          "name" : "StockID",
+          "auto" : true
         },
         {
           "col_name" : "warehouse_id",
           "type" : "Int",
-          "label" : "warehouse ID:",
-          "name" : "WarehouseID"
+          "label" : "warehouse ID",
+          "name" : "WarehouseID",
+          "auto" : false
         },
         {
           "col_name" : "item_id",
           "type" : "Int",
-          "label" : "Item ID:",
-          "name" : "ItemID"
+          "label" : "Item ID",
+          "name" : "ItemID",
+          "auto" : false
         },
         {
           "col_name" : "quantity",
           "type" : "Int",
-          "label" : "Quantity:",
-          "name" : "Quantity"
+          "label" : "Quantity",
+          "name" : "Quantity",
+          "auto" : false
         }
       ]
     },
     {
+      "singular" : "Shipping",
       "identifier" : "Shipping",
       "label" : "Warehouse Shipping",
       "sql_table_name" : "amazon_warehouse_ships",
@@ -188,24 +218,28 @@
         {
           "col_name" : "ship_id",
           "type" : "Int",
-          "label" : "Ship ID:",
-          "name" : "ShippingID"
+          "label" : "Ship ID",
+          "name" : "ShippingID",
+          "auto" : true
         },
         {
           "col_name" : "warehouse_id",
           "type" : "Int",
-          "label" : "Warehouse ID:",
-          "name" : "WarehouseID"
+          "label" : "Warehouse ID",
+          "name" : "WarehouseID",
+          "auto" : false
         },
         {
           "col_name" : "state",
           "type" : "String",
-          "label" : "State Code:",
-          "name" : "State"
+          "label" : "State Code",
+          "name" : "State",
+          "auto" : false
         }
       ]
     },
     {
+      "singular" : "Transaction",
       "identifier" : "Transactions",
       "label" : "Transactions",
       "sql_table_name" : "amazon_transactions",
@@ -213,38 +247,44 @@
         {
           "col_name" : "transaction_id",
           "type" : "Int",
-          "label" : "Transaction ID:",
-          "name" : "TransactionID"
+          "label" : "Transaction ID",
+          "name" : "TransactionID",
+          "auto" : true
         },
         {
           "col_name" : "customer_id",
           "type" : "Int",
-          "label" : "Customer ID:",
-          "name" : "CustomerID"
+          "label" : "Customer ID",
+          "name" : "CustomerID",
+          "auto" : false
         },
         {
           "col_name" : "item_id",
           "type" : "Int",
-          "label" : "Item ID:",
-          "name" : "ItemID"
+          "label" : "Item ID",
+          "name" : "ItemID",
+          "auto" : false
         },
         {
           "col_name" : "quantity",
           "type" : "Int",
-          "label" : "Quantity:",
-          "name" : "Quantity"
+          "label" : "Quantity",
+          "name" : "Quantity",
+          "auto" : false
         },
         {
           "col_name" : "warehouse_id",
           "type" : "Int",
-          "label" : "Warehouse ID:",
-          "name" : "WarehouseID"
+          "label" : "Warehouse ID",
+          "name" : "WarehouseID",
+          "auto" : false
         },
         {
           "col_name" : "customer_address_id",
           "type" : "Int",
-          "label" : "Address ID:",
-          "name" : "AddressID"
+          "label" : "Address ID",
+          "name" : "AddressID",
+          "auto" : false
         }
       ]
     }
