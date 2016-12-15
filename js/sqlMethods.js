@@ -70,6 +70,26 @@ function insertValuesToTable(values, colNames, tableName, callback) {
 
 }
 
+function updateRowWithID(id, idColName, values, colNames, tableName, callback) {
+  //Updates the row in tableName where the id in
+  //idColName = id and sets colNames to values, sending the result to callback
+  //expects values and colNames as an array object
+
+  var updateString = "UPDATE ?? SET ??=?";
+  for (var i = 0; i < colNames.length - 1; i++) {
+    updateString += ", ??=?";
+  }
+  updateString += " WHERE ??=?;"
+
+  updateString = mysql.format(updateString, tableName);
+  for (var i = 0; i < colNames.length; i++) {
+    updateString = mysql.format(updateString, [colNames[i], values[i]] );
+  }
+  updateString = mysql.format(updateString, [idColName, id]);
+
+  executeQuery(updateString, callback);
+}
+
 function selectStar(tableName, callback) {
   var queryString = "SELECT * FROM ??;";
   var inserts = [tableName];
@@ -93,6 +113,7 @@ function searchTableByColumn(tableName, columnName, value, callback) {
 
 module.exports.insertValuesToTable = insertValuesToTable;
 module.exports.searchTableByColumn = searchTableByColumn;
+module.exports.updateRowWithID = updateRowWithID;
 module.exports.selectStar = selectStar;
 module.exports.displayTable = displayTable;
 module.exports.executeQuery = executeQuery;

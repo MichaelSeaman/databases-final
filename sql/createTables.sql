@@ -84,6 +84,12 @@ INSERT INTO amazon_warehouse_ships(warehouse_id, state, deleted) VALUES (1, 'KA'
 
 INSERT INTO amazon_transactions(customer_id, item_id, quantity, warehouse_id, customer_address_id, deleted) VALUES (1, 1, 10, 1, 1, FALSE );
 
+UPDATE amazon_items SET
+  name = "Roll", description = "Delicious bread", price = 2.5
+WHERE item_id = 51;
+
+UPDATE amazon_items SET deleted = TRUE
+
 DROP TABLE amazon_transactions;
 
 DROP TABLE amazon_warehouse_ships;

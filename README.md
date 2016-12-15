@@ -52,7 +52,12 @@ To create data:
 ```
 
 ---
-###Overview:
+
+### Known Bugs:
+* Update by Name menu displays 'Name' twice
+* Modals for Create, Update and Delete do not completely encapsulate their contents.
+
+### Overview:
 The	UI	can	be	developed	in	the	framework	of	your	choosing	(i.e.	web,	.net,
 java),	however	the	backend	database	must	obviously	be	MySQL.
 
