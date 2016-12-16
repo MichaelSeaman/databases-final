@@ -98,14 +98,15 @@ function selectStar(tableName, callback) {
 }
 
 function displayTable(tableName, callback) {
-  var queryString = "SELECT * FROM ?? WHERE deleted = 'false';";
+  var queryString = "SELECT * FROM ??;";
   var inserts = [tableName];
   queryString = mysql.format(queryString, inserts);
+  console.log(queryString);
   executeQuery(queryString, callback);
 }
 
 function searchTableByColumn(tableName, columnName, value, callback) {
-  var queryString = "SELECT * FROM ?? WHERE ?? = ? AND deleted = 'false';";
+  var queryString = "SELECT * FROM ?? WHERE ?? = ?;";
   var inserts = [tableName, columnName, value];
   queryString = mysql.format(queryString, inserts);
   executeQuery(queryString, callback);

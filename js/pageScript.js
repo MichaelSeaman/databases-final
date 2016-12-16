@@ -10,10 +10,40 @@ $(function () {
 
 function generateModals() {
 
-  generateCreateModals();
   generateSearchModals();
+  generateCreateModals();
   generateUpdateModals();
   generateDeleteModals();
+}
+
+function generateSearchModals() {
+  //Modals for Search Menu
+  var menuDiv = $("#menuDiv");
+  var searchModalsString = "";
+
+
+  for (var i = 0; i < sqlTableData.length; i++) {
+    var identifier = sqlTableData[i].identifier;
+
+    for (var j = 0; j < sqlTableData[i].view_cols.length; j++) {
+      var name = sqlTableData[i].view_cols[j].name;
+      var label = sqlTableData[i].view_cols[j].label;
+
+      var modalID = `search${identifier}${name}Modal`;
+      var modalTitle = `Search ${identifier}`;
+      var content = `<form method="post" onsubmit="return false;">
+        <div class="form-group text-center">
+          <label for="search${identifier}${name}Input">${label}:</label>
+          <input type="text" id="search${identifier}${name}Input">
+          <button type="submit" class="btn btn-info" id="search${identifier}${name}Submit" data-dismiss="modal">Submit</button>
+        </div>
+      </form>`;
+
+      searchModalsString += modalTemplate(modalID, modalTitle, content);
+    }
+  }
+
+  menuDiv.append(searchModalsString);
 }
 
 function generateCreateModals() {
@@ -48,36 +78,6 @@ function generateCreateModals() {
 
   }
   menuDiv.append(createModalsString);
-}
-
-function generateSearchModals() {
-  //Modals for Search Menu
-  var menuDiv = $("#menuDiv");
-  var searchModalsString = "";
-
-
-  for (var i = 0; i < sqlTableData.length; i++) {
-    var identifier = sqlTableData[i].identifier;
-
-    for (var j = 0; j < sqlTableData[i].sql_cols.length; j++) {
-      var name = sqlTableData[i].sql_cols[j].name;
-      var label = sqlTableData[i].sql_cols[j].label;
-
-      var modalID = `search${identifier}${name}Modal`;
-      var modalTitle = `Search ${identifier}`;
-      var content = `<form method="post" onsubmit="return false;">
-        <div class="form-group text-center">
-          <label for="search${identifier}${name}Input">${label}:</label>
-          <input type="text" id="search${identifier}${name}Input">
-          <button type="submit" class="btn btn-info" id="search${identifier}${name}Submit" data-dismiss="modal">Submit</button>
-        </div>
-      </form>`;
-
-      searchModalsString += modalTemplate(modalID, modalTitle, content);
-    }
-  }
-
-  menuDiv.append(searchModalsString);
 }
 
 function generateUpdateModals() {
@@ -229,7 +229,7 @@ function bindDisplayButtons() {
   sqlTableData.forEach(function (tableData) {
     var buttonID = `#display${tableData.identifier}Button`;
     var label = tableData.label
-    var tableName = tableData.sql_table_name
+    var tableName = tableData.tableView
     $(buttonID).bind("click", function () {
       console.log(buttonID + " clicked");
       sqlMethods.displayTable(tableName, populateOutputTable);
@@ -243,9 +243,9 @@ function bindDisplayButtons() {
 function bindSearchButtons() {
 
   sqlTableData.forEach(function (tableData) {
-    tableData.sql_cols.forEach(function (colData) {
+    tableData.view_cols.forEach(function (colData) {
       var label = tableData.label;
-      var tableName = tableData.sql_table_name;
+      var tableName = tableData.tableView;
       var tableIdentifier = tableData.identifier;
       var submitButtonID = `#search${tableIdentifier}${colData.name}Submit`;
       var inputID = `#search${tableIdentifier}${colData.name}Input`;
@@ -583,10 +583,4 @@ function showFeedbackModal(modalHeader, modalBody) {
   modalB.text(modalBody);
 
   modal.modal("show");
-}
-
-
-
-function identity(x) {
-  return x;
 }
