@@ -257,11 +257,19 @@ function bindSearchButtons() {
 
         if(type == "Int") {
           input = parseInt(input);
+          sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
         }
         else if(type == "Float") {
           input = parseFloat(input);
+          sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
         }
-        sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
+        else if (type == "String") {
+          input = "%" + input + "%";
+          sqlMethods.searchTableByColumnLike(tableName, colName, input, populateOutputTable);
+        }
+        else {
+          sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
+        }
         updateTaskLabel("Searching " + label);
       });
     });

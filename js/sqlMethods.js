@@ -112,8 +112,16 @@ function searchTableByColumn(tableName, columnName, value, callback) {
   executeQuery(queryString, callback);
 }
 
+function searchTableByColumnLike(tableName, columnName, value, callback) {
+  var queryString = "SELECT * FROM ?? WHERE ?? LIKE ?;";
+  var inserts = [tableName, columnName, value];
+  queryString = mysql.format(queryString, inserts);
+  executeQuery(queryString, callback);
+}
+
 module.exports.insertValuesToTable = insertValuesToTable;
 module.exports.searchTableByColumn = searchTableByColumn;
+module.exports.searchTableByColumnLike = searchTableByColumnLike;
 module.exports.updateRowWithID = updateRowWithID;
 module.exports.selectStar = selectStar;
 module.exports.displayTable = displayTable;
