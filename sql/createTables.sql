@@ -6,6 +6,14 @@ CREATE TABLE amazon_items(
   deleted BOOLEAN DEFAULT FALSE
 );
 
+#Index name, id
+CREATE INDEX itemNameIndex
+  ON amazon_items (name);
+
+CREATE INDEX itemIdIndex
+  ON amazon_items (item_id);
+
+
 CREATE VIEW `Items` AS
   SELECT item_id AS `Item ID`, amazon_items.name AS `Name`, description AS Description, price AS Price
   FROM amazon_items WHERE deleted = FALSE;
@@ -33,6 +41,11 @@ CREATE TABLE amazon_customers(
   password VARCHAR(32),
   deleted BOOLEAN DEFAULT FALSE
 );
+#Index id
+CREATE INDEX customerIdIndex
+  ON amazon_customers(customer_id);
+
+
 
 CREATE VIEW `Customers` AS
   SELECT customer_id AS `Customer ID`, first_name AS `First Name`, last_name AS `Last Name`, email, username, amazon_customers.password
@@ -47,6 +60,15 @@ CREATE TABLE amazon_customer_addresses(
   deleted BOOLEAN DEFAULT FALSE,
   FOREIGN KEY (customer_id) REFERENCES amazon_customers(customer_id)
 );
+#index id, customer_id, state
+CREATE INDEX customerAddressIdIndex
+  ON amazon_customer_addresses(customer_address_id);
+
+CREATE INDEX customerAddressCustomerIdIndex
+  ON amazon_customer_addresses(customer_id);
+
+CREATE INDEX customerAddressStateIndex
+  ON amazon_customer_addresses(state);
 
 CREATE VIEW `Customer Addresses` AS
   SELECT customer_address_id AS `Address ID`, CONCAT(first_name, ' ', last_name) AS Customer , addr AS Address, city, state  FROM
@@ -63,6 +85,9 @@ CREATE TABLE amazon_warehouse_stock(
   FOREIGN KEY (warehouse_id) REFERENCES amazon_warehouses(warehouse_id),
   FOREIGN KEY (item_id) REFERENCES amazon_items(item_id)
 );
+#index id
+CREATE INDEX warehouseStockIdIndex
+  ON amazon_warehouse_stock (stock_id);
 
 CREATE VIEW `Warehouse Stock` AS
   SELECT stock_id AS `Stock ID`, amazon_warehouses.name AS `Warehouse Name`, amazon_items.name AS `Item Name`, quantity AS Quantity
@@ -78,6 +103,12 @@ CREATE TABLE amazon_warehouse_ships(
   deleted BOOLEAN DEFAULT FALSE,
   FOREIGN KEY (warehouse_id) REFERENCES amazon_warehouses(warehouse_id)
 );
+#index id, state
+CREATE INDEX warehouseShippingIdIndex
+  ON amazon_warehouse_ships (ship_id);
+
+CREATE INDEX warehouseShippingStateIndex
+  ON amazon_warehouse_ships (state);
 
 CREATE VIEW `Warehouse Shipping` AS
   SELECT ship_id AS `Shipping ID`, amazon_warehouses.name AS `Warehouse Name`, amazon_warehouse_ships.state AS `State` FROM
@@ -97,6 +128,16 @@ CREATE TABLE amazon_transactions(
   FOREIGN KEY (warehouse_id) REFERENCES amazon_warehouses(warehouse_id),
   FOREIGN KEY (customer_address_id) REFERENCES amazon_customer_addresses(customer_address_id)
 );
+#index id, customer id, item id
+CREATE INDEX transactionIdIndex
+  ON amazon_transactions (transaction_id);
+
+CREATE INDEX transactionCustomerIdIndex
+  ON amazon_transactions (customer_id);
+
+CREATE INDEX transactionItemIdIndex
+  ON amazon_transactions (item_id);
+
 
 CREATE VIEW Transactions AS
   SELECT transaction_id AS `Transaction ID`, CONCAT(amazon_customers.first_name, ' ', amazon_customers.last_name) AS Customer,
