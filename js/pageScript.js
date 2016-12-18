@@ -1,5 +1,7 @@
 const sqlMethods = require('./js/sqlMethods.js');
 const fs = require('fs');
+const csvExport = require('./js/writeToCSV.js');
+
 var sqlTableData = JSON.parse(fs.readFileSync('tableData.json', 'utf-8')).tables;
 console.log("pageScript Loaded.");
 
@@ -216,11 +218,16 @@ function bindButtons() {
     updateTaskLabel("Closed Down");
   });
 
+  $("#testingButton").bind("click", function () {
+    console.log("testingButton Clicked");
+  });
+
   bindSearchButtons();
   bindDisplayButtons();
   bindCreateButtons();
   bindUpdateButtons();
   bindDeleteButtons();
+  bindReportButtons();
 
 }
 
@@ -459,6 +466,51 @@ function bindDeleteButtons() {
 
 }
 
+function bindReportButtons() {
+    var bestSellingItemsButtonId = "#bestSellingItemsButton";
+    var worstSellingItemsButtonId = "#worstSellingItemsButton";
+    var bestSellingItemsStateButtonId = "#bestSellingItemsStateButton";
+    var bestGrossingItemsButtonId = "#bestGrossingItemsButton";
+    var worstGrossingItemsButtonId = "#worstGrossingItemsButton";
+    var biggestSpendersButtonId = "#biggestSpendersButton";
+
+    $(bestSellingItemsButtonId).bind("click", function () {
+      sqlMethods.executeStoredProcedure("getBestSellers()", function (data, extraData, err) {
+        exportReturnToCSV(data, extraData, err, "bestSellers.csv");
+      });
+    });
+
+    $(worstSellingItemsButtonId).bind("click", function () {
+      sqlMethods.executeStoredProcedure("getWorstSellers()", function (data, extraData, err) {
+        exportReturnToCSV(data, extraData, err, "worstSellers.csv");
+      });
+    });
+
+    $(bestGrossingItemsButtonId).bind("click", function () {
+      sqlMethods.executeStoredProcedure("getBestGrossers()", function (data, extraData, err) {
+        exportReturnToCSV(data, extraData, err, "bestGrossers.csv");
+      });
+    });
+
+    $(worstGrossingItemsButtonId).bind("click", function () {
+      sqlMethods.executeStoredProcedure("getWorstGrossers()", function (data, extraData, err) {
+        exportReturnToCSV(data, extraData, err, "worstSellers.csv");
+      });
+    });
+
+    $(bestSellingItemsStateButtonId).bind("click", function () {
+      sqlMethods.executeStoredProcedure("getBestSellersByState()", function (data, extraData, err) {
+        exportReturnToCSV(data, extraData, err, "bestSellersState.csv");
+      });
+    });
+
+    $(biggestSpendersButtonId).bind("click", function () {
+      sqlMethods.executeStoredProcedure("getBiggestSpenders()", function (data, extraData, err) {
+        exportReturnToCSV(data, extraData, err, "biggestSpenders.csv");
+      });
+    });
+}
+
 
 function updateTaskLabel(str) {
   //Takes a string object and puts it in the h2 tag
@@ -467,8 +519,15 @@ function updateTaskLabel(str) {
   label.text(str);
 }
 
+function exportReturnToCSV(data, extraData, err, fileName) {
+  if(err) {
+    throw err
+  }
+  csvExport.writeObjectToCsvFile(data[0], fileName);
+}
 
-function populateOutputTable(data, err) {
+
+function populateOutputTable(data, extraData, err) {
   //Takes a data object from MYSQL which is expected as
   //an array of of objects and populates #outputTable
 
@@ -533,7 +592,7 @@ function populateOutputTable(data, err) {
 
 }
 
-function displayUpdateFeedback(data, err) {
+function displayUpdateFeedback(data, extraData, err) {
   //Takes an OKPacket or an error from mysql
   //and displays it to the user in a modal
   //Then displays the table that was inserted into

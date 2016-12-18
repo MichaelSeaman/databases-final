@@ -24,13 +24,13 @@ function endPool() {
   pool.end();
 }
 
-function executeQuery(queryString, callback) {
+function executeQuery(queryString, callback, extraData) {
   outStream = callback || console.log;
   var output = {};
 
   pool.getConnection(function (err, connection) {
     if(err) {
-      outStream(output, err);
+      outStream(output, extraData, err);
       throw err;
     }
     console.log(queryString + " has connected with ID: " + connection.threadId);
@@ -38,18 +38,18 @@ function executeQuery(queryString, callback) {
     connection.query(queryString, function (err, rows) {
       connection.release();
       if(err) {
-        outStream(output, err);
+        outStream(output, extraData, err);
         throw err;
       }
       output = rows;
-      outStream(output);
+      outStream(output, extraData);
     });
 
   });
 
 }
 
-function insertValuesToTable(values, colNames, tableName, callback) {
+function insertValuesToTable(values, colNames, tableName, extraData, callback) {
   //Inserts values into the columns of the table provided, and
   //sends the data to the callback
   var updateString = "INSERT INTO ??(??";
@@ -66,7 +66,7 @@ function insertValuesToTable(values, colNames, tableName, callback) {
   updateString = mysql.format(updateString, colNames);
   updateString = mysql.format(updateString, values);
 
-  executeQuery(updateString, callback);
+  executeQuery(updateString, callback, extraData);
 
 }
 
@@ -101,7 +101,6 @@ function displayTable(tableName, callback) {
   var queryString = "SELECT * FROM ??;";
   var inserts = [tableName];
   queryString = mysql.format(queryString, inserts);
-  console.log(queryString);
   executeQuery(queryString, callback);
 }
 
@@ -119,9 +118,16 @@ function searchTableByColumnLike(tableName, columnName, value, callback) {
   executeQuery(queryString, callback);
 }
 
+function executeStoredProcedure(procedure, callback) {
+  var queryString = "CALL " + procedure + ";";
+  queryString = mysql.format(queryString, procedure);
+  executeQuery(queryString, callback);
+}
+
 module.exports.insertValuesToTable = insertValuesToTable;
 module.exports.searchTableByColumn = searchTableByColumn;
 module.exports.searchTableByColumnLike = searchTableByColumnLike;
+module.exports.executeStoredProcedure = executeStoredProcedure;
 module.exports.updateRowWithID = updateRowWithID;
 module.exports.selectStar = selectStar;
 module.exports.displayTable = displayTable;

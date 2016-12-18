@@ -1,25 +1,11 @@
-# Databases Final
+(values, colNames, tableName, callback)# Databases Final
 
 **Author:** Michael Seaman
 
 **Due date:** 12/16/16
 
 ---
-### Proposal: Amazon Sales Database
-
----
-## Usage
-
-
-To create data:
-
-```
-
-<code>
-
-```
-
----
+## Proposal: Amazon Sales Database
 
 #### Premise
 The multi-billion dollar e-sales giant Amazon in 2015 alone had over 100 billion

@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/seama107/databases-final#readme",
   "dependencies": {
+    "faker": "^3.1.0",
     "jquery": "^3.1.1",
+    "json2csv": "^3.7.3",
     "mysql": "^2.12.0"
   }
 }
