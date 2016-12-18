@@ -1,4 +1,4 @@
-(values, colNames, tableName, callback)# Databases Final
+# Databases Final
 
 **Author:** Michael Seaman
 
@@ -60,7 +60,7 @@ The	final	project	must incorporate at a	minimum	the	following	requirements:
 - [x]  Delete	records	(soft	delete	function	would	be	ideal)
 - [x]  Update	records
 - [ ]  Make	use	of	transactions	(commit	&	rollback)
-- [ ]  Generate	reports	that	can	be	exported	(excel	or	csv	format)
+- [x]  Generate	reports	that	can	be	exported	(excel	or	csv	format)
   * One	query	must perform an aggregation	using	a	group-by clause
   * One	query	must be	implemented	with	a	prepared	statement (if	developing in	Java)
   * One	query	must	contain	a	sub-query.
