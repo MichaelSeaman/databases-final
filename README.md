@@ -5,6 +5,24 @@
 **Due date:** 12/16/16
 
 ---
+
+## Setup:
+
+Running this application requires the node.js framework. Download it here:
+https://nodejs.org/en/download/
+
+Running the following command will install any dependencies not already included
+`> npm install`
+
+To run the application:
+`> node server.js`
+
+or to mount it on port 80:
+`> sudo node server.js 80`
+
+And that's it! Go to the link below to check it out!
+http://localhost:3000
+
 ## Proposal: Amazon Sales Database
 
 #### Premise
