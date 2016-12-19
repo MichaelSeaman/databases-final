@@ -1,611 +1,381 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amazon Sales Database (Beta)</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Michael Seaman Landing">
+    <meta name="author" content="Michael Seaman">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-  <!-- Minified Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Bootstrap Theme -->
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <title>Michael Seaman Landing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/ionicons.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
 
-</head>
-<body>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="col-sm-4 col-xs-12 bg-default" id="menuDiv">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#displayCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Display
-              <span class="caret pull-right"></span>
-            </button>
+  <body>
+
+    <div id="h">
+      <div class="logo">
+        <h2>M. Seaman</h2>
+      </div><!--/logo-->
+      <div class="container centered">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h1>Hello, my name is <b>Michael Seaman</b>.<br/>I swear I know what I'm doing</br> 45% of the time.</h1>
           </div>
-          <div class="collapse" id="displayCollapse">
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayItemsButton">Items</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayWarehousesButton">Warehouses</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayShippingButton">Shipping</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayStockButton">Stock</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayCustomersButton">Customers</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayAddressesButton">Customer Addresses</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="displayTransactionsButton">Transaction History</button>
-            </div>
+        </div><!--/row-->
+
+        <div class="row mt">
+          <div class="col-sm-4">
+            <i class="ion-ios7-musical-notes"></i>
+            <h3>Music</h3>
+          </div><!--/col-md-4-->
+
+          <div class="col-sm-4">
+            <i class="ion-ios7-browsers-outline"></i>
+            <h3>Software</h3>
+          </div><!--/col-md-4-->
+
+          <div class="col-sm-4">
+            <i class="ion-ios7-copy-outline"></i>
+            <h3>Research</h3>
+          </div><!--/col-md-4-->
+
+        </div><!--/row-->
+      </div><!--/container-->
+    </div><!--H-->
+
+    <div class="container ptb">
+      <div class="row">
+        <h2 class="centered mb">I compose music for media and craft efficient backend software.</h2>
+        <div class="col-md-6">
+          <p>Welcome to the permanent home to all of my creative projects, be it sound or software. Here I will upload current and past projects for no other reason than just sharing for fun. Please feel free to enjoy my music and browse through my current technical projects</p>
+        </div><!--/col-md-6-->
+        <div class="col-md-6">
+          <p>In addition to the projects and events shown below, this website and webserver have been large on-going projects for me. Stay tuned as I gradually compose this website from the ground up!</p>
+        </div><!--/col-md-6-->
+      </div><!--/row-->
+    </div><!-- /.container -->
+
+    <div id="g">
+      <div class="container">
+        <div class="row centered">
+          <h2>Check some of my latest works.</h2>
+          <div class="col-md-8 col-md-offset-2">
+            <p>Creative projects in music and code.</p>
+
+          </div><!--/col-md-8-->
+        </div><!--/row-->
+      </div><!--/.container-->
+    <div class="portfolio-centered mt">
+      <div class="recentitems portfolio">
+
+        <div class="portfolio-item graphic-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_01.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">Music For the film "Il Faut Que"</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_01.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="https://soundcloud.com/dj-m-sizzle/interruption-dance-draft-ii" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+               </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item web-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_02.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">Gershwin Piano Concerto in F</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_02.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="https://www.youtube.com/watch?v=zNfNO7pCdhI" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item graphic-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_03.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">Web Database Project</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_03.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="/db/index.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item graphic-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_04.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item books">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_05.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_05.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item graphic-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_06.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_06.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+               </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item web-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_07.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_07.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item graphic-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_08.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_08.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item graphic-design">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_09.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_09.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+
+        <div class="portfolio-item books">
+          <div class="he-wrap tpl6">
+          <img src="assets/img/portfolio/portfolio_10.jpg" class="img-responsive" alt="">
+            <div class="he-view">
+              <div class="bg a0" data-animate="fadeIn">
+                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
+                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_10.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+              </div><!-- he bg -->
+            </div><!-- he view -->
+          </div><!-- he wrap -->
+        </div><!-- end col-12 -->
+       </div><!-- portfolio -->
+    </div><!-- portfolio container -->
+
+    <div class="container mt">
+        <div class="row clients centered">
+          <p class="mb">Some skills I feel comfortable bragging about</p>
+          <div class="col-sm-2 col-sm-offset-1">
+            <img src="assets/img/skill1.png" alt="">
           </div>
-
-          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#searchCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Search
-              <span class="caret pull-right"></span>
-            </button>
+          <div class="col-sm-2">
+            <img src="assets/img/skill2.png" alt="">
           </div>
-          <div class="collapse" id="searchCollapse">
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchItemsDropdown" data-toggle="dropdown">
-                Items
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchItemsDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsItemIDModal">
-                    ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsNameModal">
-                    Name
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsPriceModal">
-                    Price
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchWarehousesDropdown" data-toggle="dropdown">
-                Warehouses
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchWarehousesDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesWarehouseIDModal">
-                    ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesNameModal">
-                    Name
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesAddressModal">
-                    Address
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesCityModal">
-                    City
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesStateModal">
-                    State
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchShippingDropdown" data-toggle="dropdown">
-                Shipping
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchShippingDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingShippingIDModal">
-                    Shipping ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingWarehouseNameModal">
-                    Warehouse
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingStateModal">
-                    State
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchStockDropdown" data-toggle="dropdown">
-                Stock
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchStockDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockStockIDModal">
-                    Stock ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockWarehouseNameModal">
-                    Warehouse
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockItemNameModal">
-                    Item
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockQuantityModal">
-                    Quantity
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchCustomersDropdown" data-toggle="dropdown">
-                Customers
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchCustomersDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersCustomerIDModal">
-                    ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersFirstNameModal">
-                    First Name
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersLastNameModal">
-                    Last Name
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersEmailModal">
-                    Email
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersUsernameModal">
-                    Username
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersPasswordModal">
-                    Password
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchCustomerAddressesDropdown" data-toggle="dropdown">
-                Customer Addresses
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchCustomerAddressesDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesAddressIDModal">
-                    Address ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesCustomerNameModal">
-                    Customer
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesAddressModal">
-                    Address
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesCityModal">
-                    City
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesStateModal">
-                    State
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchTransactionsDropdown" data-toggle="dropdown">
-                Transaction History
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="searchTransactionsDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsTransactionIDModal">
-                    Transaction ID
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsCustomerNameModal">
-                    Customer
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsItemNameModal">
-                    Item
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsWarehouseNameModal">
-                    Warehouse
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsAddressModal">
-                    Address
-                  </button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsQuantityModal">
-                    Quantity
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div class="col-sm-2">
+            <img src="assets/img/skill3.png" alt="">
           </div>
-
-          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#createCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Create
-              <span class="caret pull-right"></span>
-            </button>
+          <div class="col-sm-2">
+            <img src="assets/img/skill4.png" alt="">
           </div>
-          <div class="collapse" id="createCollapse">
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createItemModal">Item</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createWarehouseModal">Warehouse</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createShippingModal">Shipping</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createStockModal">Stock</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createCustomerModal">Customer</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createAddressModal">Customer Address</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createTransactionModal">Transaction</button>
-            </div>
+          <div class="col-sm-2">
+            <img src="assets/img/skill5.png" alt="">
           </div>
+        </div><!--/row-->
+      </div><!--/container-->
+    </div><!--/.G-->
 
-          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#updateCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Update
-              <span class="caret pull-right"></span>
-            </button>
+    <div id="sep">
+      <div class="container">
+        <div class="row centered">
+          <div class="col-md-8 col-md-offset-2">
+            <h1>I live in the amazing Orange County</h1>
+            <h3 class="mb">Need a competent pianist or software engineer?</h3>
+            <a href="mailto:micseam@gmail.com" <button class="btn btn-conf btn-clear">Contact Me</button></a>
           </div>
-          <div class="collapse" id="updateCollapse">
+        </div><!--/row-->
+      </div><!--/container-->
+    </div><!--/.sep-->
 
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateItemDropdown" data-toggle="dropdown">
-                Item
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateItemDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemNameModal">Name</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemPriceModal">Price</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemDescriptionModal">Description</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateWarehouseDropdown" data-toggle="dropdown">
-                Warehouse
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateWarehouseDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseNameModal">Name</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseAddressModal">Address</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseCityModal">City</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseStateModal">State</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateShippingDropdown" data-toggle="dropdown">
-                Shipping
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateShippingDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateShippingAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateShippingWarehouseIDModal">Warehouse ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateShippingStateModal">State</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateStockDropdown" data-toggle="dropdown">
-                Stock
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateStockDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockWarehouseIDModal">Warehouse ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockItemIDModal">Item ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockQuantityModal">Quantity</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateCustomerDropdown" data-toggle="dropdown">
-                Customer
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateCustomerDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerFirstNameModal">First Name</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerLastNameModal">Last Name</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerEmailModal">Email</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerUsernameModal">Username</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerPasswordModal">Password</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateCustomerAddressDropdown" data-toggle="dropdown">
-                Customer Address
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateCustomerAddressDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressCustomerIDModal">Customer ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressAddressModal">Address</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressCityModal">City</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressStateModal">State</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-12 dropdown open">
-              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateTransactionDropdown" data-toggle="dropdown">
-                Transaction
-                <span class="caret pull-right"></span>
-              </button>
-              <div class="dropdown-menu" aria-labelled-by="updateTransactionDropdown">
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionAllModal">All Fields</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionCustomerIDModal">Customer ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionItemIDModal">Item ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionWarehouseIDModal">Warehouse ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionAddressIDModal">Address ID</button>
-                </div>
-                <div class="col-sm-12 col-xs-6">
-                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionQuantityModal">Quantity</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#deleteCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Delete
-              <span class="caret pull-right"></span>
-            </button>
-          </div>
-          <div class="collapse" id="deleteCollapse">
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteItemModal">Item</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteWarehouseModal">Warehouse</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteShippingModal">Shipping</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteStockModal">Stock</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteCustomerModal">Customer</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteAddressModal">Customer Address</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteTransactionModal">Transaction</button>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#reportCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Reports
-              <span class="caret pull-right"></span>
-            </button>
-          </div>
-          <div class="collapse" id="reportCollapse">
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="bestSellingItemsButton">Best Selling Items</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <!--<button class="btn btn-link" type="button" id="worstSellingItemsButton">Worst Selling Items</button>-->
-              <a href="#" class="btn btn-link" id="worstSellingItemsButton">Worst Selling Items</a>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="bestSellingItemsStateButton">Best Selling Items (State)</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="bestGrossingItemsButton">Best Grossing Items</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="worstGrossingItemsButton">Worst Grossing Items</button>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <button class="btn btn-link" type="button" id="biggestSpendersButton">Biggest Spenders</button>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-xs-12 bg-primary collapse-toggle optionsToggle" data-toggle="collapse" data-target="#optionsCollapse">
-            <button class="col-xs-12 btn btn-link btn-white" type="button">
-              Options
-              <span class="caret pull-right"></span>
-            </button>
-          </div>
-          <div class="collapse" id="optionsCollapse">
-            <div class="col-sm-12 col-xs-6">
-              <a href="https://github.com/seama107/databases-final" class="btn btn-link" type="button">Github</a>
-            </div>
-            <div class="col-sm-12 col-xs-6">
-              <a href="https://github.com/seama107/databases-final/blob/master/README.md" class="btn btn-link" type="button">README</a>
-            </div>
-          </div>
-        </div> 
-
-
-
-        <div class="col-sm-8 col-xs-12 bg-default">
-          <h3 class="text-center" id="taskLabel">Introduction</h3>
-          <table class="table table-condensed table-hover" id="outputTable">
-            <thead>
-              <tr>
-                <th>Welecome to Amazon's US Warehouse DB Application.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Get started by creating/displaying records with the menu.</td>
-              </tr>
-              <tr>
-                <td>Or, go to 'Generate Reports' to export files.</td>
-              </tr>
-            </tbody>
-          </table>
+    <div id="f">
+      <div class="container">
+        <div class="row centered">
+          <div class="col-md-8 col-md-offset-2">
+            <a href="https://www.facebook.com/michael.seaman.75"><i class="fa fa-facebook"></i></a>
+            <a href="https://github.com/michaelseaman"><i class="fa fa-github"></i></a>
+            <a href="https://soundcloud.com/dj-m-sizzle"><i class="fa fa-soundcloud"></i></a>
+            <a href="#"><i class="fa fa-sign-in"></i></a>
+          </div><!--/col-md-8-->
         </div>
+      </div><!--/container-->
+    </div><!--/.F-->
 
-        <div id="feedbackModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <a class="close" data-dismiss="modal">×</a>
-                <h4 id="feedbackModalHeader" class="modal-title">Success</h4>
-              </div>
-              <div class="modal-body">
-                <p id="feedbackModalBody">
-                  Text.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/retina-1.1.0.js"></script>
+    <script src="assets/js/jquery.hoverdir.js"></script>
+    <script src="assets/js/jquery.hoverex.min.js"></script>
+    <script src="assets/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/js/jquery.isotope.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 
 
-      </div>
-    </div>
-  </div>
+    <script>
+// Portfolio
+(function($) {
+  "use strict";
+  var $container = $('.portfolio'),
+    $items = $container.find('.portfolio-item'),
+    portfolioLayout = 'fitRows';
 
-  <!--JQuery and Javascript files, linked at the bottom of the page -->
-  <!--<script>
-    window.jQuery = window.$ = require('jquery');
-  </script>-->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/pageScript.js"></script>
+    if( $container.hasClass('portfolio-centered') ) {
+      portfolioLayout = 'masonry';
+    }
 
-</body>
+    $container.isotope({
+      filter: '*',
+      animationEngine: 'best-available',
+      layoutMode: portfolioLayout,
+      animationOptions: {
+      duration: 750,
+      easing: 'linear',
+      queue: false
+    },
+    masonry: {
+    }
+    }, refreshWaypoints());
+
+    function refreshWaypoints() {
+      setTimeout(function() {
+      }, 1000);
+    }
+
+    $('nav.portfolio-filter ul a').on('click', function() {
+        var selector = $(this).attr('data-filter');
+        $container.isotope({ filter: selector }, refreshWaypoints());
+        $('nav.portfolio-filter ul a').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    });
+
+    function getColumnNumber() {
+      var winWidth = $(window).width(),
+      columnNumber = 1;
+
+      if (winWidth > 1200) {
+        columnNumber = 5;
+      } else if (winWidth > 950) {
+        columnNumber = 4;
+      } else if (winWidth > 600) {
+        columnNumber = 3;
+      } else if (winWidth > 400) {
+        columnNumber = 2;
+      } else if (winWidth > 250) {
+        columnNumber = 1;
+      }
+        return columnNumber;
+      }
+
+      function setColumns() {
+        var winWidth = $(window).width(),
+        columnNumber = getColumnNumber(),
+        itemWidth = Math.floor(winWidth / columnNumber);
+
+        $container.find('.portfolio-item').each(function() {
+          $(this).css( {
+          width : itemWidth + 'px'
+        });
+      });
+    }
+
+    function setPortfolio() {
+      setColumns();
+      $container.isotope('reLayout');
+    }
+
+    $container.imagesLoaded(function () {
+      setPortfolio();
+    });
+
+    $(window).on('resize', function () {
+    setPortfolio();
+  });
+})(jQuery);
+</script>
+  </body>
 </html>

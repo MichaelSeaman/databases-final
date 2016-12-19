@@ -5,20 +5,13 @@ const sqlMethods = require('./js/sqlMethods.js');
 const json2csv = require('json2csv');
 const path = require('path');
 const port = parseInt(process.argv[2] || "3000");
+const morgan = require('morgan');
 
 var sqlTableData = JSON.parse(fs.readFileSync('tableData.json', 'utf-8')).tables;
 var app = express();
 var shuttingDown = false;
 
-var logger = function(req, res, next) {
-  if(req.hasOwnProperty('client') && req.client.hasOwnProperty('parser') ) {
-    console.log("Request: " + req.client.parser.incoming.url);
-
-  }
-  next(); // Passing the request to the next handler in the stack.
-}
-
-app.use(logger);
+app.use(morgan('combined'));
 
 
 //Serves all the files in the /public folder blindly
@@ -26,7 +19,7 @@ app.use(express.static('public'));
 
 //Gluing the pageScript and the tableData files together
 //on the request for the pageScript
-app.get('/js/pageScript.js', function (req, res) {
+app.get('/db/js/pageScript.js', function (req, res) {
   fs.readFile('./js/pageScript.js', function (err, data) {
     if(err) {
       throw err;

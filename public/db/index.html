@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon Sales Database (Beta)</title>
+
+  <!-- Minified Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap Theme -->
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+</head>
+<body>
+  <nav class="navbar visible-lg visible-md visible-sm hidden-xs">
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-4 col-xs-12 bg-default" id="menuDiv">
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#displayCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Display
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="displayCollapse">
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayItemsButton">Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayWarehousesButton">Warehouses</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayShippingButton">Shipping</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayStockButton">Stock</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayCustomersButton">Customers</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayAddressesButton">Customer Addresses</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="displayTransactionsButton">Transaction History</button>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#searchCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Search
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="searchCollapse">
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchItemsDropdown" data-toggle="dropdown">
+                Items
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchItemsDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsItemIDModal">
+                    ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsNameModal">
+                    Name
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchItemsPriceModal">
+                    Price
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchWarehousesDropdown" data-toggle="dropdown">
+                Warehouses
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchWarehousesDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesWarehouseIDModal">
+                    ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesNameModal">
+                    Name
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesAddressModal">
+                    Address
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesCityModal">
+                    City
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchWarehousesStateModal">
+                    State
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchShippingDropdown" data-toggle="dropdown">
+                Shipping
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchShippingDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingShippingIDModal">
+                    Shipping ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingWarehouseNameModal">
+                    Warehouse
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchShippingStateModal">
+                    State
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchStockDropdown" data-toggle="dropdown">
+                Stock
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchStockDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockStockIDModal">
+                    Stock ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockWarehouseNameModal">
+                    Warehouse
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockItemNameModal">
+                    Item
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchStockQuantityModal">
+                    Quantity
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchCustomersDropdown" data-toggle="dropdown">
+                Customers
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchCustomersDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersCustomerIDModal">
+                    ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersFirstNameModal">
+                    First Name
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersLastNameModal">
+                    Last Name
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersEmailModal">
+                    Email
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersUsernameModal">
+                    Username
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchCustomersPasswordModal">
+                    Password
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchCustomerAddressesDropdown" data-toggle="dropdown">
+                Customer Addresses
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchCustomerAddressesDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesAddressIDModal">
+                    Address ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesCustomerNameModal">
+                    Customer
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesAddressModal">
+                    Address
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesCityModal">
+                    City
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchAddressesStateModal">
+                    State
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="searchTransactionsDropdown" data-toggle="dropdown">
+                Transaction History
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="searchTransactionsDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsTransactionIDModal">
+                    Transaction ID
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsCustomerNameModal">
+                    Customer
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsItemNameModal">
+                    Item
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsWarehouseNameModal">
+                    Warehouse
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsAddressModal">
+                    Address
+                  </button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#searchTransactionsQuantityModal">
+                    Quantity
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#createCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Create
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="createCollapse">
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createItemModal">Item</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createWarehouseModal">Warehouse</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createShippingModal">Shipping</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createStockModal">Stock</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createCustomerModal">Customer</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createAddressModal">Customer Address</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#createTransactionModal">Transaction</button>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#updateCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Update
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="updateCollapse">
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateItemDropdown" data-toggle="dropdown">
+                Item
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateItemDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemNameModal">Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemPriceModal">Price</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateItemDescriptionModal">Description</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateWarehouseDropdown" data-toggle="dropdown">
+                Warehouse
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateWarehouseDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseNameModal">Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseAddressModal">Address</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseCityModal">City</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateWarehouseStateModal">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateShippingDropdown" data-toggle="dropdown">
+                Shipping
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateShippingDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateShippingAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateShippingWarehouseIDModal">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateShippingStateModal">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateStockDropdown" data-toggle="dropdown">
+                Stock
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateStockDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockWarehouseIDModal">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockItemIDModal">Item ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateStockQuantityModal">Quantity</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateCustomerDropdown" data-toggle="dropdown">
+                Customer
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateCustomerDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerFirstNameModal">First Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerLastNameModal">Last Name</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerEmailModal">Email</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerUsernameModal">Username</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateCustomerPasswordModal">Password</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateCustomerAddressDropdown" data-toggle="dropdown">
+                Customer Address
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateCustomerAddressDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressCustomerIDModal">Customer ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressAddressModal">Address</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressCityModal">City</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateAddressStateModal">State</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-12 dropdown open">
+              <button class="col-xs-12 btn btn-link dropdown-toggle" type="button" id="updateTransactionDropdown" data-toggle="dropdown">
+                Transaction
+                <span class="caret pull-right"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelled-by="updateTransactionDropdown">
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionAllModal">All Fields</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionCustomerIDModal">Customer ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionItemIDModal">Item ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionWarehouseIDModal">Warehouse ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionAddressIDModal">Address ID</button>
+                </div>
+                <div class="col-sm-12 col-xs-6">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#updateTransactionQuantityModal">Quantity</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#deleteCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Delete
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="deleteCollapse">
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteItemModal">Item</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteWarehouseModal">Warehouse</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteShippingModal">Shipping</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteStockModal">Stock</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteCustomerModal">Customer</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteAddressModal">Customer Address</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" data-toggle="modal" data-target="#deleteTransactionModal">Transaction</button>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xs-6 bg-primary collapse-toggle" data-toggle="collapse" data-target="#reportCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Reports
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="reportCollapse">
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="bestSellingItemsButton">Best Selling Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <!--<button class="btn btn-link" type="button" id="worstSellingItemsButton">Worst Selling Items</button>-->
+              <a href="#" class="btn btn-link" id="worstSellingItemsButton">Worst Selling Items</a>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="bestSellingItemsStateButton">Best Selling Items (State)</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="bestGrossingItemsButton">Best Grossing Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="worstGrossingItemsButton">Worst Grossing Items</button>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <button class="btn btn-link" type="button" id="biggestSpendersButton">Biggest Spenders</button>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-xs-12 bg-primary collapse-toggle optionsToggle" data-toggle="collapse" data-target="#optionsCollapse">
+            <button class="col-xs-12 btn btn-link btn-white" type="button">
+              Options
+              <span class="caret pull-right"></span>
+            </button>
+          </div>
+          <div class="collapse" id="optionsCollapse">
+            <div class="col-sm-12 col-xs-6">
+              <a href="https://github.com/seama107/databases-final" class="btn btn-link" type="button">Github</a>
+            </div>
+            <div class="col-sm-12 col-xs-6">
+              <a href="https://github.com/seama107/databases-final/blob/master/README.md" class="btn btn-link" type="button">README</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-sm-8 col-xs-12 bg-default">
+          <h3 class="text-center" id="taskLabel">Introduction</h3>
+          <table class="table table-condensed table-hover" id="outputTable">
+            <thead>
+              <tr>
+                <th>Welecome to Amazon's US Warehouse DB Application.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Get started by creating/displaying records with the menu.</td>
+              </tr>
+              <tr>
+                <td>Or, go to 'Generate Reports' to export files.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="feedbackModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h4 id="feedbackModalHeader" class="modal-title">Success</h4>
+              </div>
+              <div class="modal-body">
+                <p id="feedbackModalBody">
+                  Text.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--JQuery and Javascript files, linked at the bottom of the page -->
+  <!--<script>
+    window.jQuery = window.$ = require('jquery');
+  </script>-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/pageScript.js"></script>
+
+</body>
+</html>
