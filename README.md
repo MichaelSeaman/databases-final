@@ -23,6 +23,9 @@ or to mount it on port 80:
 And that's it! Go to the link below to check it out!
 http://localhost:3000
 
+Also, you can view the Demo at
+http://michael-seaman.com
+
 ## Proposal: Amazon Sales Database
 
 #### Premise
