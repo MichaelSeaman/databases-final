@@ -38,4 +38,6 @@ CREATE VIEW Transactions AS
   JOIN amazon_customers ON amazon_transactions.customer_id = amazon_customers.customer_id
   JOIN amazon_items ON amazon_transactions.item_id = amazon_items.item_id
   JOIN amazon_warehouses ON amazon_transactions.warehouse_id = amazon_warehouses.warehouse_id
-  JOIN amazon_customer_addresses ON amazon_customer_addresses.customer_address_id = amazon_transactions.customer_address_id;
+  JOIN amazon_customer_addresses ON amazon_customer_addresses.customer_address_id = amazon_transactions.customer_address_id
+  WHERE amazon_transactions.deleted = FALSE
+  ORDER BY `Transaction ID`;

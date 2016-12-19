@@ -38,7 +38,7 @@ most revenue.
 ---
 ### Schema:
 
-![Alt text](/finalProjectSchema.png?raw=true "Amazon Database Schema")
+![Alt text](/inClassPresentation/finalProjectSchema.png?raw=true "Amazon Database Schema")
 
  - Indexes were placed on columns most likely to fill up and be searched the most
 
@@ -47,6 +47,7 @@ most revenue.
 ### Known Bugs:
 * Update by Name menu displays 'Name' twice
 * Modals for Create, Update and Delete do not completely encapsulate their contents.
+* Need to remove 'ExtraData' attribute
 
 ### Overview:
 The	UI	can	be	developed	in	the	framework	of	your	choosing	(i.e.	web,	.net,

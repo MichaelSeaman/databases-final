@@ -1,225 +1,20 @@
-const sqlMethods = require('./js/sqlMethods.js');
-const fs = require('fs');
-const csvExport = require('./js/writeToCSV.js');
-
-var sqlTableData = JSON.parse(fs.readFileSync('tableData.json', 'utf-8')).tables;
-console.log("pageScript Loaded.");
+//const sqlMethods = require('./js/sqlMethods.js');
+//const csvExport = require('./js/writeToCSV.js');
 
 $(function () {
-  generateModals();
   bindButtons();
 });
 
-function generateModals() {
-
-  generateSearchModals();
-  generateCreateModals();
-  generateUpdateModals();
-  generateDeleteModals();
-}
-
-function generateSearchModals() {
-  //Modals for Search Menu
-  var menuDiv = $("#menuDiv");
-  var searchModalsString = "";
-
-
-  for (var i = 0; i < sqlTableData.length; i++) {
-    var identifier = sqlTableData[i].identifier;
-
-    for (var j = 0; j < sqlTableData[i].view_cols.length; j++) {
-      var name = sqlTableData[i].view_cols[j].name;
-      var label = sqlTableData[i].view_cols[j].label;
-
-      var modalID = `search${identifier}${name}Modal`;
-      var modalTitle = `Search ${identifier}`;
-      var content = `<form method="post" onsubmit="return false;">
-        <div class="form-group text-center">
-          <label for="search${identifier}${name}Input">${label}:</label>
-          <input type="text" id="search${identifier}${name}Input">
-          <button type="submit" class="btn btn-info" id="search${identifier}${name}Submit" data-dismiss="modal">Submit</button>
-        </div>
-      </form>`;
-
-      searchModalsString += modalTemplate(modalID, modalTitle, content);
-    }
-  }
-
-  menuDiv.append(searchModalsString);
-}
-
-function generateCreateModals() {
-  //Modals for Create menu
-  var menuDiv = $("#menuDiv");
-  var createModalsString = "";
-
-  for (var i = 0; i < sqlTableData.length; i++) {
-    var singular = sqlTableData[i].singular;
-    var modalID = `create${singular}Modal`;
-    var modalTitle = `Record New ${singular}`;
-    var modalContent = `<form method="post" onsubmit="return false;">
-      <div class="form-group text-center">`;
-
-    for(var j = 0; j < sqlTableData[i].sql_cols.length; j++) {
-      if(sqlTableData[i].sql_cols[j].auto) {
-        continue;
-        //We don't want to display the autoincrement columns
-        //to the user on the create menu
-      }
-      var colName = sqlTableData[i].sql_cols[j].name;
-      var label = sqlTableData[i].sql_cols[j].label;
-      modalContent += `<div class="col-xs-4">
-        <label for="create${singular}${colName}Input">${label}:</label>
-        <input type="text" id="create${singular}${colName}Input" class="form-control">
-      </div>`
-    }
-    modalContent += `<div class="col-xs-4"><br><button type="submit" class="btn btn-info" id="create${singular}Submit" data-dismiss="modal">Submit</button></div>
-  </div>
-</form>`
-    createModalsString += modalTemplate(modalID, modalTitle, modalContent);
-
-  }
-  menuDiv.append(createModalsString);
-}
-
-function generateUpdateModals() {
-  //Modals for the Update menu
-  var menuDiv = $("#menuDiv");
-  var updateModalsString = "";
-
-  //First, the modals that update all fields
-  for(var i = 0; i < sqlTableData.length; ++i) {
-    var singular = sqlTableData[i].singular;
-    var modalID = `update${singular}AllModal`;
-    var modalTitle = `Update ${singular}`;
-
-    var modalContent = `<form method="post" onsubmit="return false;">
-      <div class="form-group text-center">`;
-
-    for(var j = 0; j < sqlTableData[i].sql_cols.length; ++j) {
-      var isIdColumn = sqlTableData[i].sql_cols[j].auto;
-      var colName = sqlTableData[i].sql_cols[j].name;
-      var colLabel = sqlTableData[i].sql_cols[j].label;
-      var inputID = `update${singular}All${colName}Input`;
-      var label = isIdColumn ? `${colName}:` : `New ${colLabel}:`;
-      var input = `<div class="col-xs-4"><label for="${inputID}">${label}</label><input type="text" id=${inputID}></div>`
-      modalContent += input;
-    }
-
-    modalContent += `<div class="col-xs-4"><br><button type="submit" class="btn btn-info" id="update${singular}AllSubmit" data-dismiss="modal">Submit</button></div>
-  </div>
-</form>`;
-    updateModalsString += modalTemplate(modalID, modalTitle, modalContent);
-  }
-
-  //Now, the modals that only update one field at a time
-  for(var i = 0; i < sqlTableData.length; ++i) {
-    var singular = sqlTableData[i].singular;
-
-    //Assuming that the id column is the first listed
-    var nameOfIdColumn = sqlTableData[i].sql_cols[0].name;
-    var labelOfIdColumn = sqlTableData[i].sql_cols[0].label;
-
-
-    for(var j = 0; j < sqlTableData[i].sql_cols.length; ++j) {
-      var colName = sqlTableData[i].sql_cols[j].name;
-      var colLabel = sqlTableData[i].sql_cols[j].label;
-      var isIdColumn = sqlTableData[i].sql_cols[j].auto;
-      if(isIdColumn) {
-        continue;
-        //We don't want to allow users to update IDs
-      }
-
-      var modalContent = `<form method="post" onsubmit="return false;">
-        <div class="form-group text-center">`;
-
-      var modalID = `update${singular}${colName}Modal`;
-      var modalTitle = `Update ${singular} ${colLabel}`;
-      //We have 2 input fields one for ID and one for whatever column we're looping
-      //through. Each input has an ID and a label
-      var fieldInputID = `update${singular}${colName}Input`;
-      var fieldInputLabel = `New ${colLabel}:`;
-      var idInputID = `update${singular}${colName}${nameOfIdColumn}Input`;
-      var idInputLabel = `${labelOfIdColumn}:`;
-      modalContent += `<div class="col-xs-4"><label for="${idInputID}">${idInputLabel}</label><input type="text" id="${idInputID}"></div>`
-      modalContent += `<div class="col-xs-4"><label for="${fieldInputID}">${fieldInputLabel}</label><input type="text" id="${fieldInputID}"></div>`;
-
-
-      modalContent += `<div class="col-xs-4"><br><button type="submit" class="btn btn-info" id="update${singular}${colName}Submit" data-dismiss="modal">Submit</button></div>
-    </div>
-  </form>`;
-      updateModalsString += modalTemplate(modalID, modalTitle, modalContent);
-    }
-  }
-
-  menuDiv.append(updateModalsString);
-}
-
-function generateDeleteModals() {
-  //Modals for the Delete menu
-  var menuDiv = $("#menuDiv");
-  var deleteModalsString = "";
-
-  for(var i = 0; i < sqlTableData.length; ++i) {
-    var singular = sqlTableData[i].singular;
-    var modalTitle = `Delete ${singular}`;
-    var modalID = `delete${singular}Modal`;
-
-    var labelOfIdColumn = "";
-
-    //Retrieving the label of the ID column
-    for(var j = 0; j < sqlTableData[i].sql_cols.length; ++j) {
-      var isIdColumn = sqlTableData[i].sql_cols[j].auto;
-      if(isIdColumn) {
-        labelOfIdColumn = sqlTableData[i].sql_cols[j].label;
-        break;
-      }
-    }
-    //Remember that the id's for delete are as follows
-    // #deleteItemInput <- for ItemID
-    // #deleteItemSubmit <- Submit button
-
-    var idInputID = `delete${singular}Input`;
-    var idInputLabel = `${labelOfIdColumn}:`;
-    var modalContent = `<form method="post" onsubmit="return false;">
-      <div class="form-group text-center">`;
-    modalContent += `<div class="col-xs-6"><label for="${idInputID}">${idInputLabel}</label><input type="text" id="${idInputID}"></div>`
-    modalContent += `<div class="col-xs-6"><button type="submit" class="btn btn-info" id="delete${singular}Submit" data-dismiss="modal">Submit</button></div>
-  </div>
-</form>`;
-
-    deleteModalsString += modalTemplate(modalID, modalTitle, modalContent);
-  }
-
-  menuDiv.append(deleteModalsString);
-}
-
-function modalTemplate(modalID, modalTitle, content) {
-  modal = `  <div id="${modalID}" class="modal fade" role="dialog">
-       <div class="modal-dialog">
-         <div class="modal-content">
-           <div class="modal-header">
-             <a class="close" data-dismiss="modal">&times;</a>
-             <h4 class="modal-title">${modalTitle}</h4>
-           </div>
-           <div class="modal-body">
-            ${content}
-            </div>
-          </div>
-        </div>
-      </div>`;
-  return modal;
-}
-
 function bindButtons() {
-  $("#forceCloseButton").bind("click", function () {
+  /*$("#forceCloseButton").bind("click", function () {
     console.log("forceCloseButton Clicked");
     sqlMethods.endPool();
     updateTaskLabel("Closed Down");
-  });
+  });*/
 
   $("#testingButton").bind("click", function () {
     console.log("testingButton Clicked");
+    //$.post("/");
   });
 
   bindSearchButtons();
@@ -239,8 +34,10 @@ function bindDisplayButtons() {
     var tableName = tableData.tableView
     $(buttonID).bind("click", function () {
       console.log(buttonID + " clicked");
-      sqlMethods.displayTable(tableName, populateOutputTable);
-      updateTaskLabel(label);
+      $.post("/display", {"tableName": tableName}, function (res) {
+        populateOutputTable(res);
+        updateTaskLabel(label);
+      });
     });
   });
 
@@ -261,23 +58,23 @@ function bindSearchButtons() {
       $(submitButtonID).bind("click", function () {
         console.log(submitButtonID + " clicked");
         var input = $(inputID).val();
-
         if(type == "Int") {
           input = parseInt(input);
-          sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
         }
         else if(type == "Float") {
           input = parseFloat(input);
-          sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
         }
         else if (type == "String") {
           input = "%" + input + "%";
-          sqlMethods.searchTableByColumnLike(tableName, colName, input, populateOutputTable);
         }
-        else {
-          sqlMethods.searchTableByColumn(tableName, colName, input, populateOutputTable);
-        }
-        updateTaskLabel("Searching " + label);
+        $.post("/search", {
+          "tableName": tableName,
+          "colName": colName,
+          "input": input
+        }, function (res) {
+          populateOutputTable(res);
+          updateTaskLabel(label);
+        });
       });
     });
   });
@@ -337,7 +134,11 @@ function bindCreateButtons() {
         }
       }
 
-      sqlMethods.insertValuesToTable(userInputs, validInsertColumnNames, tableName, displayUpdateFeedback);
+      $.post("/create", {
+        "tableName": tableName,
+        "userInputs": userInputs,
+        "validInsertColumnNames": validInsertColumnNames
+      }, displayUpdateFeedback);
     });
 
 
@@ -388,7 +189,14 @@ function bindUpdateButtons() {
       var id = userInputs.shift();
       var idColName = colNames.shift();
 
-      sqlMethods.updateRowWithID(id, idColName, userInputs, colNames, tableName, displayUpdateFeedback);
+      $.post("/update", {
+        "id": id,
+        "idColName": idColName,
+        "userInputs": userInputs,
+        "colNames" : colNames,
+        "tableName" : tableName
+      }, displayUpdateFeedback);
+
     });
   });
 
@@ -431,8 +239,16 @@ function bindUpdateButtons() {
         var tableName = tableData.sql_table_name;
         var sqlColName = column.col_name;
         var idColName = tableData.sql_cols[0].col_name;
+        var colNames = [sqlColName];
+        var userInputs = [userFieldInput];
 
-        sqlMethods.updateRowWithID(id, idColName, [userFieldInput], [sqlColName], tableName, displayUpdateFeedback);
+        $.post("/update", {
+          "id": id,
+          "idColName": idColName,
+          "userInputs": userInputs,
+          "colNames" : colNames,
+          "tableName" : tableName
+        }, displayUpdateFeedback);
 
       });
 
@@ -456,10 +272,12 @@ function bindDeleteButtons() {
       //SQL Data
       var tableName = tableData.sql_table_name;
       var idColName = tableData.sql_cols[0].col_name;
-      var value = 1;
-      var colName = "deleted";
 
-      sqlMethods.updateRowWithID(id, idColName, [value], [colName], tableName, displayUpdateFeedback);
+      $.post("/delete", {
+        "id": id,
+        "idColName": idColName,
+        "tableName" : tableName
+      }, displayUpdateFeedback);
 
     });
   });
@@ -474,40 +292,34 @@ function bindReportButtons() {
     var worstGrossingItemsButtonId = "#worstGrossingItemsButton";
     var biggestSpendersButtonId = "#biggestSpendersButton";
 
-    $(bestSellingItemsButtonId).bind("click", function () {
-      sqlMethods.executeStoredProcedure("getBestSellers()", function (data, extraData, err) {
-        exportReturnToCSV(data, extraData, err, "bestSellers.csv");
-      });
+    $(bestSellingItemsButtonId).bind("click", function (e) {
+      e.preventDefault();  //stop the browser from following
+      window.location.href = 'downloads/bestSellers.csv';
     });
 
-    $(worstSellingItemsButtonId).bind("click", function () {
-      sqlMethods.executeStoredProcedure("getWorstSellers()", function (data, extraData, err) {
-        exportReturnToCSV(data, extraData, err, "worstSellers.csv");
-      });
+    $(worstSellingItemsButtonId).bind("click", function (e) {
+      e.preventDefault();
+      window.location.href = 'downloads/worstSellers.csv';
     });
 
-    $(bestGrossingItemsButtonId).bind("click", function () {
-      sqlMethods.executeStoredProcedure("getBestGrossers()", function (data, extraData, err) {
-        exportReturnToCSV(data, extraData, err, "bestGrossers.csv");
-      });
+    $(bestSellingItemsStateButtonId).bind("click", function (e) {
+      e.preventDefault();
+      window.location.href = 'downloads/bestSellersByState.csv';
     });
 
-    $(worstGrossingItemsButtonId).bind("click", function () {
-      sqlMethods.executeStoredProcedure("getWorstGrossers()", function (data, extraData, err) {
-        exportReturnToCSV(data, extraData, err, "worstSellers.csv");
-      });
+    $(bestGrossingItemsButtonId).bind("click", function (e) {
+      e.preventDefault();
+      window.location.href = 'downloads/bestGrossers.csv';
     });
 
-    $(bestSellingItemsStateButtonId).bind("click", function () {
-      sqlMethods.executeStoredProcedure("getBestSellersByState()", function (data, extraData, err) {
-        exportReturnToCSV(data, extraData, err, "bestSellersState.csv");
-      });
+    $(worstGrossingItemsButtonId).bind("click", function (e) {
+      e.preventDefault();
+      window.location.href = 'downloads/worstGrossers.csv';
     });
 
-    $(biggestSpendersButtonId).bind("click", function () {
-      sqlMethods.executeStoredProcedure("getBiggestSpenders()", function (data, extraData, err) {
-        exportReturnToCSV(data, extraData, err, "biggestSpenders.csv");
-      });
+    $(biggestSpendersButtonId).bind("click", function (e) {
+      e.preventDefault();
+      window.location.href = 'downloads/biggestSpenders.csv';
     });
 }
 
@@ -527,9 +339,13 @@ function exportReturnToCSV(data, extraData, err, fileName) {
 }
 
 
-function populateOutputTable(data, extraData, err) {
+function populateOutputTable(res) {
   //Takes a data object from MYSQL which is expected as
   //an array of of objects and populates #outputTable
+  var temp = JSON.parse(res);
+  var data = temp[0];
+  var extraData = temp[1];
+  var err = temp[2];
 
   if(err) {
     if(err.code == "ER_USER_LIMIT_REACHED") {
@@ -592,10 +408,17 @@ function populateOutputTable(data, extraData, err) {
 
 }
 
-function displayUpdateFeedback(data, extraData, err) {
+function displayUpdateFeedback(res) {
   //Takes an OKPacket or an error from mysql
   //and displays it to the user in a modal
   //Then displays the table that was inserted into
+
+  var temp = JSON.parse(res);
+  var data = temp[0];
+  var extraData = temp[1];
+  var err = temp[2];
+
+
   var modalHeader = "";
   var modalBody = "";
 
@@ -615,7 +438,7 @@ function displayUpdateFeedback(data, extraData, err) {
     }
   }
   else {
-    if(data.constructor.name == "OkPacket") {
+    if(data.hasOwnProperty('affectedRows')) {
 
       if(data.affectedRows == 0) {
         modalHeader = "Uh-oh";

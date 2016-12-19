@@ -1,0 +1,11 @@
+.btn-white,
+.btn-white:hover,
+.btn-white:active,
+.btn-white:enabled
+{
+  color: white;
+}
+
+.optionsToggle {
+  background-color: rgba(82, 199, 254, .9);
+}
