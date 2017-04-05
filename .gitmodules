@@ -1,0 +1,3 @@
+[submodule "public/blacktie"]
+	path = public/blacktie
+	url = https://github.com/michaelseaman/blacktie
