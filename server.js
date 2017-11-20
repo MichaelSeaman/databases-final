@@ -17,6 +17,9 @@ app.use(morgan('combined'));
 //Serves all the files in the /public folder blindly
 app.use(express.static('public/blacktie/'));
 app.use(express.static('public/'));
+/*app.get('/', function(req, res) {
+  res.sendFile('public/blacktie/index.html', {"root": __dirname});
+});*/
 
 //Gluing the pageScript and the tableData files together
 //on the request for the pageScript
