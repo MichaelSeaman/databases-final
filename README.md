@@ -1,4 +1,4 @@
-# Databases Final
+# Toy Inventory Database
 
 **Author:** Michael Seaman
 
